@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/afval/sorteren', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
+
+Route::get('/', function(){
     return view('welcome');
 });
