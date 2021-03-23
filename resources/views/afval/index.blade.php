@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Sorteer hier je afaval</h1>
+    <input type="text" name="invoerAfval" id="js--invoerAfval">
+    <button id="js--submitButton" onclick="getInvoer()"></button>
 </body>
+<script src="/js/main.js"></script>
 </html>

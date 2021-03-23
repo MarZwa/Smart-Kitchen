@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/afval/sorteren', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
+Route::get('/', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
 
-Route::get('/', function(){
-    return view('welcome');
-});
+Route::get('/status/{naam}', [\App\Http\Controllers\AfvalController::class, 'statusUpdate']);
+
+// Route::get('/', function(){
+//     return view('welcome');
+// });

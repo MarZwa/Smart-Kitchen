@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAfvalTable extends Migration
+class CreateAfvalBakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateAfvalTable extends Migration
      */
     public function up()
     {
-        Schema::create('afval', function (Blueprint $table) {
-            $table->id();
-            $table->string('naam')->unique();
+        Schema::create('afval_bak', function (Blueprint $table) {
+            $table->string('bak')->unique();
         });
     }
 
@@ -26,6 +25,6 @@ class CreateAfvalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('afval');
+        Schema::dropIfExists('afval_bak');
     }
 }

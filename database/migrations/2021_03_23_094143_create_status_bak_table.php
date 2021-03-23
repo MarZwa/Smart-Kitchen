@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAfvalTable extends Migration
+class CreateStatusBakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateAfvalTable extends Migration
      */
     public function up()
     {
-        Schema::create('afval', function (Blueprint $table) {
-            $table->id();
-            $table->string('naam')->unique();
+        Schema::create('status_bak', function (Blueprint $table) {
+            $table->BigIncrements('id');
+            $table->string('status')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateAfvalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('afval');
+        Schema::dropIfExists('status_bak');
     }
 }

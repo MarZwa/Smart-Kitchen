@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use DB;
 
 class AfvalRestTableSeeder extends Seeder
 {
@@ -13,6 +14,12 @@ class AfvalRestTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $rest_afval_array = ['Videoband', 'Papier', 'Karton', 'Pizzadoos', 'Theezakjes'];
+        foreach($rest_afval_array as $rest){
+            DB::table('afval')->insert([
+                'naam' => $rest,
+                'bak' => 'Rest',
+            ]);
+        }
     }
 }
