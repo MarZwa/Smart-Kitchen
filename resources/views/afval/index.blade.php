@@ -7,9 +7,9 @@
     <title>Afval sorteren</title>
 </head>
 <body>
-    <h1>Sorteer hier je afaval</h1>
+    <h1>Sorteer hier je afval</h1>
     <input type="text" name="invoerAfval" id="js--invoerAfval">
-    <button id="js--submitButton" onclick="getInvoer()"></button>
+    <button id="js--submitButton" onclick="getInvoer()">Ok</button>
 </body>
 <script src="/js/main.js"></script>
 </html>
