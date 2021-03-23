@@ -1,11 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-use DB;
 
 use Illuminate\Database\Seeder;
+use DB;
 
-class FoodsTableSeeder extends Seeder
+class RecommendedFoodsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,7 @@ class FoodsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('foods')->insert([
-            'name' => 'Aanbevolen',
+        DB::table('recommended_foods')->insert([
             'groente' => '250 g',
             'fruit' => '200 g',
             'brood' => '6 st',  
