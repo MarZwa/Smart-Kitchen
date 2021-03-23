@@ -14,7 +14,7 @@ class AfvalRestTableSeeder extends Seeder
      */
     public function run()
     {
-        $rest_afval_array = ['Videoband', 'Papier', 'Karton', 'Pizzadoos', 'Theezakjes'];
+        $rest_afval_array = ['videoband', 'papier', 'karton', 'pizzadoos', 'theezakjes'];
         foreach($rest_afval_array as $rest){
             DB::table('afval')->insert([
                 'naam' => $rest,

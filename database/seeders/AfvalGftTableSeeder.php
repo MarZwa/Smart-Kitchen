@@ -14,7 +14,7 @@ class AfvalGftTableSeeder extends Seeder
      */
     public function run()
     {
-        $gft_afval_array = ['Bananenschil', 'Botjes', 'Bloemen', 'Koffieprut', 'Potgrond'];
+        $gft_afval_array = ['bananenschil', 'botjes', 'bloemen', 'koffieprut', 'potgrond'];
         foreach($gft_afval_array as $gft){
             DB::table('afval')->insert([
                 'naam' => $gft,

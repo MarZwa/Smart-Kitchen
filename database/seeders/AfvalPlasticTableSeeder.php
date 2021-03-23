@@ -14,7 +14,7 @@ class AfvalPlasticTableSeeder extends Seeder
      */
     public function run()
     {
-        $plastic_afval_array = ['Plastic zak', 'Cola blikje', 'Bubbeltjesplastic', 'Vershoudfolie', 'Boterkuipje'];
+        $plastic_afval_array = ['plastic zak', 'cola blikje', 'bubbeltjesplastic', 'vershoudfolie', 'boterkuipje'];
         foreach($plastic_afval_array as $plastic){
             DB::table('afval')->insert([
                 'naam' => $plastic,

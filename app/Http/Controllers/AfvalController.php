@@ -8,7 +8,8 @@ class AfvalController extends Controller
 {
     public function sorteren(){
         return view('afval.index',[
-            'afval' => \App\Models\Afval::all(),
+            'afval_naam' => \App\Models\Afval::all('naam'),
+            'status' => \App\Models\StatusBak::all()->first(),
         ]);
     }
 

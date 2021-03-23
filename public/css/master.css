@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: #903749;
+    font-family: sans-serif;
+}
+
+.soorteerVeld{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.soorteerVeld__h1{
+    font-size: 200%;
+}
+
+.soorteerVeld__text_input{
+    margin:2rem;
+    width: 80%;
+    max-width: 35rem;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.soorteerVeld__button{
+    padding: 1.5rem 4rem;
+    background-color: #903749;
+    border: 0.3rem solid black;
+    font-size: 1.6rem;
+    transition: all 0.3s;
+}
+
+.soorteerVeld__button:hover{
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #e84545;
+    border-color: #e84545;
+}
+
+.soorteerVeld__img_veld{
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.soorteerVeld__figure{
+    text-align: center;
+    width: 33.3%;
+}
+
+.soorteerVeld__bak_img{
+    width:50%;
+}
+
+.soorteerVeld__bak_imgblur{
+    width:50%;
+    background-color: #a7ff83;
+    border-radius: 2rem;
+}
+
+.soorteerVeld__figure > figcaption{
+    margin-top: 2rem;
+}
