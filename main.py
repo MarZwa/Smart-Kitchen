@@ -15,8 +15,9 @@ port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 # mycursor = mydb.cursor
 
 while True:
-    weigth = port.readline().split()
-    print(weight)
+    weight = port.readline().split()
+    if(len(weight) == 3):
+        mycursor.execute("UPDATE user_foods WHERE name == " + weight[0] + " SET " + weight[2] + " = " + weight[2] + " + " + weight[3])
 
     time.sleep(1)
     # mydb.commit()
