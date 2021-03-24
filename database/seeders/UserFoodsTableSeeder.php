@@ -16,18 +16,17 @@ class UserFoodsTableSeeder extends Seeder
     {
         DB::table('user_foods')->insert([
             'name' => 'Marc',
-            'groente' => 14,
-            'fruit' => 0,
-            'brood' => 0,  
-            'graanpr/aardappelen' => 0, 
-            'vis' => 0, 
-            'peulvruchten' => 0, 
-            'vlees' => 0, 
-            'ei' => 0, 
-            'noten' => 0, 
-            'melk(producten)' => 0, 
-            'kaas' => 0, 
-            'vetten' => 0,
+            'tag' => '1216720222',
+        ]);
+
+        DB::table('user_foods')->insert([
+            'name' => 'Jim',
+            'tag' => '2171383194',
+        ]);
+
+        DB::table('user_foods')->insert([
+            'name' => 'Jamal',
+            'tag' => '163243293',
         ]);
     }
 }
