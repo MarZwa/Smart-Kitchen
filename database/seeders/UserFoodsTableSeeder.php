@@ -15,7 +15,19 @@ class UserFoodsTableSeeder extends Seeder
     public function run()
     {
         DB::table('user_foods')->insert([
-            'name' => 'Marc'
+            'name' => 'Marc',
+            'groente' => 14,
+            'fruit' => 0,
+            'brood' => 0,  
+            'graanpr/aardappelen' => 0, 
+            'vis' => 0, 
+            'peulvruchten' => 0, 
+            'vlees' => 0, 
+            'ei' => 0, 
+            'noten' => 0, 
+            'melk(producten)' => 0, 
+            'kaas' => 0, 
+            'vetten' => 0,
         ]);
     }
 }

@@ -12,12 +12,13 @@ mydb = mysql.connector.connect(
 )
 port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 
-mycursor = mydb.cursor
+mycursor = mydb.cursor()
 
 while True:
     weight = port.readline().split()
     if(len(weight) == 3):
-        mycursor.execute("UPDATE user_foods WHERE name == " + weight[0] + " SET " + weight[2] + " = " + weight[2] + " + " + weight[3])
+        updateQuery = "UPDATE user_foods SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE name = '" + weight[0] + "';"
+        mycursor.execute(updateQuery)
 
     time.sleep(1)
     mydb.commit()

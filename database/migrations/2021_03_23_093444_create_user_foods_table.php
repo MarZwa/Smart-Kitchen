@@ -17,18 +17,18 @@ class CreateUserFoodsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('tag')->nullable();
-            $table->string('groente')->default(0);
-            $table->string('fruit')->default(0);
-            $table->string('brood')->default(0);
-            $table->string('graanpr/aardappelen')->default(0);
-            $table->string('vis')->default(0);
-            $table->string('peulvruchten')->default(0);
-            $table->string('vlees')->default(0);
-            $table->string('ei')->default(0);
-            $table->string('noten')->default(0);
-            $table->string('melk(producten)')->default(0);
-            $table->string('kaas')->default(0);
-            $table->string('vetten')->default(0);
+            $table->integer('groente');
+            $table->integer('fruit');
+            $table->integer('brood');
+            $table->integer('graanpr/aardappelen');
+            $table->integer('vis');
+            $table->integer('peulvruchten');
+            $table->integer('vlees');
+            $table->integer('ei');
+            $table->integer('noten');
+            $table->integer('melk(producten)');
+            $table->integer('kaas');
+            $table->integer('vetten');
         });
     }
 
