@@ -1,0 +1,113 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --profile-color: #0084ff;
+    --background-color: #eeeeee;
+    --dashboard-menu-header: #fff;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.8rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--background-color);
+}
+
+.dashboard__profile{
+    background-color: var(--profile-color);
+    height: 8rem;
+}
+
+.dashboard__heading{
+    padding: 1.8rem 15% 0 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__logo{
+    color: var(--dashboard-menu-header);
+    font-size: 2.4rem;
+    z-index: 1;
+}
+
+.dashboard__menu{
+    width: 100%;
+    height: 0;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    overflow-y: hidden;
+    list-style: none;
+    background-color: var(--profile-color);
+    transition-duration: 0.8s;
+}
+
+.dashboard__menu__item{
+    color: var(--dashboard-menu-header);
+    font-size: 2.4rem;
+}
+
+.dashboard__menu__item:last-child{
+    margin-bottom: 20rem;
+}
+
+.visible{
+    height: 100%;
+    transition: 0.8s;
+}
+
+
+/* Menu Icon */
+
+.dashboard__menu__icon {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .top, .middle, .bottom {
+    width: 3.5rem;
+    height: 0.5rem;
+    background-color: var(--dashboard-menu-header);
+    margin: 0.6rem 0;
+    transition: 0.5s;
+  }
+  
+  /* Rotate first bar */
+  .change .top {
+    -webkit-transform: rotate(-45deg) translate(-0.8rem, 0.7rem) ;
+    transform: rotate(-45deg) translate(-0.8rem, 0.7rem) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .middle {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bottom {
+    -webkit-transform: rotate(45deg) translate(-0.8rem, -0.8rem) ;
+    transform: rotate(45deg) translate(-0.8rem, -0.8rem) ;
+  }
+
+
+
+
+
+/* Utility Classes */
+.u-grid-2{
+    display: grid;
+    grid-template-columns: repeat(12,minmax(0,1fr)); 
+}

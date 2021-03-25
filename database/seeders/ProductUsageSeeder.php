@@ -15,28 +15,28 @@ class ProductUsageSeeder extends Seeder
     public function run()
     {
         DB::table('product_usage')->insert([
-            'profile_name' => 'Bas',
+            'user_name' => 'Bas',
             'date' => '18-03-2021',
             'calories' => 0,
             'alcohol' => 0,
         ]);
 
         DB::table('product_usage')->insert([
-            'profile_name' => 'Bas',
+            'user_name' => 'Bas',
             'date' => '18-03-2021',
             'calories' => 200,
             'alcohol' => 0,
         ]);
 
         DB::table('product_usage')->insert([
-            'profile_name' => 'Bas',
+            'user_name' => 'Bas',
             'date' => '18-03-2021',
             'calories' => 0,
             'alcohol' => 1,
         ]);
 
         DB::table('product_usage')->insert([
-            'profile_name' => 'Bas',
+            'user_name' => 'Bas',
             'date' => '18-03-2021',
             'calories' => 150,
             'alcohol' => 1,

@@ -11,6 +11,6 @@ class ProductUsage extends Model
     protected $table = 'product_usage';
 
     public function profile(){
-        return $this->belongsTo(Profile::class, 'profile_name', 'name');
+        return $this->belongsTo(Profile::class, 'users_name', 'name');
     }
 }

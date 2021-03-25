@@ -15,8 +15,8 @@ class CreateProductUsageTable extends Migration
     {
         Schema::create('product_usage', function (Blueprint $table) {
             $table->id();
-            $table->string('profile_name');
-            $table->foreign("profile_name")->references("name")->on("profile");
+            $table->string('user_name');
+            $table->foreign("user_name")->references("name")->on("users");
             $table->string('date'); //DD-MM-YYYY
             $table->integer('calories');
             $table->integer('alcohol');
@@ -32,7 +32,7 @@ class CreateProductUsageTable extends Migration
     public function down()
     {
         Schema::table('product_usage', function (Blueprint $table){
-            $table->dropForeign('product_usage_profile_name_foreign');
+            $table->dropForeign('product_usage_user_name_foreign');
         });
         Schema::dropIfExists('product_usage');
     }

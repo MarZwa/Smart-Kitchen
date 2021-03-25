@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,11 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/profiles/{id}/products', [ProfileController::class, 'showUsage']);
-Route::get('/profiles/{id}', [ProfileController::class, 'show']);
-Route::get('/profiles', [ProfileController::class, 'index']);
+Route::get('/users', [UsersController::class, 'index']);
+Route::get('/users/{id}', [UsersController::class, 'show']);
+Route::get('/users/{id}/products', [UsersController::class, 'showUsage']);
+
+
 
 Route::get('/', function () {
     return view('welcome');

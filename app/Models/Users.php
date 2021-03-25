@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\ProductUsage;
 
-class Profile extends Model
+class Users extends Model
 {
-    protected $table = 'profile';
+    protected $table = 'users';
 
     public function allProducts(){
-        return $this->hasMany(ProductUsage::class, 'profile_name', 'name');
+        return $this->hasMany(ProductUsage::class, 'user_name', 'name');
     }
 }
