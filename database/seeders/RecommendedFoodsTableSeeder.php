@@ -15,76 +15,18 @@ class RecommendedFoodsTableSeeder extends Seeder
     public function run()
     {
         DB::table('recommended_foods')->insert([
-            'food' => 'groente',
-            'amount' => 250, 
-            'repeat' => 'daily',           
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'fruit',
-            'amount' => 200,  
-            'repeat' => 'daily',           
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'brood',
-            'amount' => 6,   
-            'repeat' => 'daily',          
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'aardappelen/graanpr',
-            'amount' => 240, 
-            'repeat' => 'daily',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'vis',
-            'amount' => 100, 
-            'repeat' => 'weekly',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'peulvruchten',
-            'amount' => 135,  
-            'repeat' => 'weekly',           
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'vlees',
-            'amount' => 500, 
-            'repeat' => 'weekly',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'ei',
-            'amount' => 2,  
-            'repeat' => 'weekly',           
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'noten',
-            'amount' => 25, 
-            'repeat' => 'daily',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'melk(producten)',
-            'amount' => 300, 
-            'repeat' => 'daily',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'kaas',
-            'amount' => 40, 
-            'repeat' => 'daily',            
-        ]);
-
-        DB::table('recommended_foods')->insert([
-            'food' => 'vetten',
-            'amount' => 65, 
-            'repeat' => 'daily',
-            'description' => 'Smeer- en bereidingsvetten zoals boter, olijfolie, etc.'            
+            'groente' => 250,
+            'fruit' => 200,
+            'brood' => 6,
+            'aardappelen' => 240,
+            'vis' => 100,
+            'peulvruchten' => 135,
+            'vlees' => 500,
+            'ei' => 2,
+            'noten' => 25,
+            'melk' => 300,
+            'kaas' => 40,
+            'vetten' => 65,
         ]);
     }
 }

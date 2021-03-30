@@ -14,19 +14,19 @@ class AddFoodsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('groente')->default(0);
-            $table->string('fruit')->default(0);
-            $table->string('brood')->default(0);
-            $table->string('aardappelen/graanpr')->default(0);
-            $table->string('vis')->default(0);
-            $table->string('peulvruchten')->default(0);
-            $table->string('vlees')->default(0);
-            $table->string('ei')->default(0);
-            $table->string('noten')->default(0);
-            $table->string('melk(producten)')->default(0);
-            $table->string('kaas')->default(0);
-            $table->string('vetten')->default(0);
-        });
+            $table->integer('groente')->default(0);
+            $table->integer('fruit')->default(0);
+            $table->integer('brood')->default(0);
+            $table->integer('aardappelen')->default(0);
+            $table->integer('vis')->default(0);
+            $table->integer('peulvruchten')->default(0);
+            $table->integer('vlees')->default(0);
+            $table->integer('ei')->default(0);
+            $table->integer('noten')->default(0);
+            $table->integer('melk')->default(0);
+            $table->integer('kaas')->default(0);
+            $table->integer('vetten')->default(0);
+        }); 
     }
 
     /**
