@@ -14,18 +14,10 @@ class CreateRecommendedFoodsTable extends Migration
     public function up()
     {
         Schema::create('recommended_foods', function (Blueprint $table) {
-            $table->string('groente');
-            $table->string('fruit');
-            $table->string('brood');
-            $table->string('graanpr/aardappelen');
-            $table->string('vis');
-            $table->string('peulvruchten');
-            $table->string('vlees');
-            $table->string('ei');
-            $table->string('noten');
-            $table->string('melk(producten)');
-            $table->string('kaas');
-            $table->string('vetten');
+            $table->string('food')->unique();
+            $table->integer('amount');
+            $table->string('repeat');
+            $table->text('description')->nullable();
         });
     }
 
