@@ -1,3 +1,11 @@
+:root {
+    --accent-color: #0084FF;
+    --accent-green: #7FCD91;
+    --accent-red: #F05454;
+    --background-color: #eee;
+    --card-background-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +15,75 @@
 html {
     box-sizing: inherit;
     font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     font-size: 1.8rem;
     padding: 2rem;
     font-family: sans-serif;
+    background-color: var(--background-color);
+}
+
+.foodCard {
+    grid-column: span 12;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+    border: solid 0.1rem var(--accent-color);
+    background-color: var(--card-background-color);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    height: 15rem;
+}
+
+@media (min-width: 768px) {
+    .foodCard {
+        grid-column: span 6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .foodCard {
+        grid-column: span 4;
+    }
+}
+
+@media (min-width: 1440px) {
+    .foodCard {
+        grid-column: span 4;
+    }
+}
+
+.foodCard__header {
+    width: 100%;
+}
+
+.foodCard__progressSection {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.foodCard__label {
+    display: block;
+}
+
+.foodCard__progress {
+    border: solid 2px var(--accent-color);
+    border-radius: 0.5rem;
+    height: 2.5rem;
+}
+
+.foodCard__progress::-webkit-progress-bar {
+    background-color: var(--card-background-color);
+    border-radius: 0.5rem;
+}
+
+.foodCard__progress::-webkit-progress-value {
+    background-color: var(--accent-color);
+    border-radius: 0.1rem;
 }
 
 /* utility classes */
@@ -28,4 +99,32 @@ body {
 
 .u-grid-gap-2 {
     gap: 2rem;
+}
+
+.u-display-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-header {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 1440px) {
+    .u-desktop-width {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+/* Deafult */
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    font-size: 175%;
+    margin-bottom: 1rem;
 }

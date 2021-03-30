@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    protected function showFoods() {
+    protected function showFoods($name) {
         $foods = \App\Models\Foods::all()->first();
-        $user = \App\Models\Users::find('Marc');
+        $user = \App\Models\Users::find($name);
 
-        return view('grid', ['foods' => $foods, 'user' => $user]);
+        return view('foods', ['foods' => $foods, 'user' => $user]);
     }
 }

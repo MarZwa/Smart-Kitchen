@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/foods', [\App\Http\Controllers\UsersController::class, 'showFoods']);
+Route::get('/foods/{name}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
