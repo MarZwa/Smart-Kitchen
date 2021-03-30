@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    padding: 2rem;
+    font-family: sans-serif;
+}
+
+/* utility classes */
+.u-list-style-none {
+    list-style: none;
+}
+
+.u-grid-12 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.u-grid-gap-2 {
+    gap: 2rem;
+}
