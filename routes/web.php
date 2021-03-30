@@ -14,12 +14,7 @@ use App\Http\Controllers\UsersController;
 |
 */
 
+Route::get('/', [UsersController::class, 'index']);
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/{id}', [UsersController::class, 'show']);
 Route::get('/users/{id}/products', [UsersController::class, 'showUsage']);
-
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
