@@ -17,6 +17,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/schoonmaak', function () {
-    return view('schoonmaak');
+Route::get('/cleaning', function () {
+    return view('cleaning');
 });
