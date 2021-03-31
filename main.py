@@ -18,7 +18,7 @@ while True:
     weight = port.readline().split()
     print(weight)
     if(len(weight) == 3):
-        updateQuery = "UPDATE user_foods SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE name = '" + weight[0] + "';"
+        updateQuery = "UPDATE users SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE rfid = '" + weight[0] + "';"
         mycursor.execute(updateQuery)
 
     time.sleep(1)
