@@ -95,11 +95,11 @@ body {
 }
 
 .foodCard__progress--tooMuch {
-    border: solid 2px var(--accent-green);    
+    border: solid 2px var(--accent-red);    
 }
 
 .foodCard__progress--tooMuch::-webkit-progress-value {
-    background-color: var(--accent-green);
+    background-color: var(--accent-red);
 }
 
 /* utility classes */

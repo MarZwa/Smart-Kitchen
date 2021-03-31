@@ -87,7 +87,13 @@
                 </header>
                 <section class="foodCard__progressSection">
                 <label class="foodCard__label" for="vlees">{{ $user -> vlees }} g / {{ $foods -> vlees }} g</label>
-                    <progress id="vlees" class="foodCard__progress" value="{{ $user -> vlees }}" max="{{ $foods -> vlees }}"></progress>
+                    @if($user -> vlees == $foods -> vlees)
+                        <progress id="vlees" class="foodCard__progress foodCard__progress--max" value="{{ $user -> vlees }}" max="{{ $foods -> vlees }}"></progress>
+                    @elseif( $user -> vlees > $foods -> vlees)
+                        <progress id="vlees" class="foodCard__progress foodCard__progress--tooMuch" value="{{ $user -> vlees }}" max="{{ $foods -> vlees }}"></progress>
+                    @else
+                        <progress id="vlees" class="foodCard__progress" value="{{ $user -> vlees }}" max="{{ $foods -> vlees }}"></progress>
+                    @endif
                 </section>
             </article>
         </li>
