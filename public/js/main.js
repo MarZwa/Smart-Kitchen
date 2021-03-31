@@ -1,9 +1,11 @@
-const menu_icon = document.getElementsByClassName("dashboard__menu-icon");
-const dashboard_profile = document.getElementsByClassName("dashboard__profile");
+const menu_icon = document.getElementsByClassName("dashboard__menu-icon")[0];
+const dashboard_profile = document.getElementsByClassName("dashboard__profile")[0];
+const html = document.getElementsByTagName('html')[0];
 
 function changeIcon() {
-    menu_icon[0].classList.toggle("change");
-    dashboard_profile[0].classList.toggle("visible");
+    menu_icon.classList.toggle("change");
+    dashboard_profile.classList.toggle("visible");
+    html.classList.toggle('no-scroll');
 }
 
 // Custom HTMLElement for Circular progression bar

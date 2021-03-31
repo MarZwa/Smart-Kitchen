@@ -20,7 +20,6 @@ class CreateProductUsageTable extends Migration
             $table->string('date'); //DD-MM-YYYY
             $table->integer('calories');
             $table->integer('alcohol');
-            $table->timestamps();
         });
     }
 

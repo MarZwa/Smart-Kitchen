@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use DB;
+use Carbon\Carbon;
 
 class ProductUsageSeeder extends Seeder
 {
@@ -16,28 +17,28 @@ class ProductUsageSeeder extends Seeder
     {
         DB::table('product_usage')->insert([
             'user_name' => 'Bas',
-            'date' => '18-03-2021',
+            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 0,
             'alcohol' => 0,
         ]);
 
         DB::table('product_usage')->insert([
             'user_name' => 'Bas',
-            'date' => '18-03-2021',
+            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 200,
             'alcohol' => 0,
         ]);
 
         DB::table('product_usage')->insert([
             'user_name' => 'Bas',
-            'date' => '18-03-2021',
+            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 0,
             'alcohol' => 1,
         ]);
 
         DB::table('product_usage')->insert([
             'user_name' => 'Bas',
-            'date' => '18-03-2021',
+            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 150,
             'alcohol' => 1,
         ]);
