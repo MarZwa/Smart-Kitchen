@@ -86,6 +86,22 @@ body {
     border-radius: 0.1rem;
 }
 
+.foodCard__progress--max {
+    border: solid 2px var(--accent-green);    
+}
+
+.foodCard__progress--max::-webkit-progress-value {
+    background-color: var(--accent-green);
+}
+
+.foodCard__progress--tooMuch {
+    border: solid 2px var(--accent-green);    
+}
+
+.foodCard__progress--tooMuch::-webkit-progress-value {
+    background-color: var(--accent-green);
+}
+
 /* utility classes */
 .u-list-style-none {
     list-style: none;

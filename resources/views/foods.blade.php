@@ -75,7 +75,7 @@
                 </header>
                 <section class="foodCard__progressSection">
                 <label class="foodCard__label" for="peulvruchten">{{ $user -> peulvruchten }} g / {{ $foods -> peulvruchten }} g</label>
-                    <progress id="vis" class="foodCard__progress" value="{{ $user -> peulvruchten }}" max="{{ $foods -> peulvruchten }}"></progress>
+                    <progress id="peulvruchten" class="foodCard__progress" value="{{ $user -> peulvruchten }}" max="{{ $foods -> peulvruchten }}"></progress>
                 </section>
             </article>
         </li>
