@@ -1,0 +1,6 @@
+{
+    "arduino.ignoreBoards": [
+    
+    ],
+    "arduino.useArduinoCli": true
+}

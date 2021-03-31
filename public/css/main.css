@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root{
+    /* --c- : color variables */
+    /* For -light mode */
+    --c-light-main-bg: #EEEEEE;
+    --c-light-alt-bg: #FFFFFF;
+    --c-light-text: black;
+
+    /* For -dark mode */
+    --c-dark-main-bg: #7C7D7E;
+    --c-dark-alt-bg: #41444B;
+    --c-dark-text: #EEEEEE;
+    --c-dark-alt-text: #ffffff;
+
+    /* Main accents */
+    --c-main-accent: #0084FF;
+    --c-alt-accent: #89C6FF;
+
+    /* Utility accents */
+    --c-green: #7FCD91;
+    --c-red: #F05454;
+    --c-blue: #7393A7;
+    --c-yellow: #FFDD67;
+}
+
+body{
+    font-size: 1.8rem;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--c-light-main-bg);
+}
+
