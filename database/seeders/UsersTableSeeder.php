@@ -34,6 +34,18 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'rfid' => '2171383194',
             'name' => 'Jim',
+            'groente' => 100,
+            'fruit' => 75,
+            'brood' => 3,
+            'aardappelen' => 69,
+            'vis' => 20,
+            'peulvruchten' => 135,
+            'vlees' => 420,
+            'ei' => 0,
+            'noten' => 11,
+            'melk' => 120,
+            'kaas' => 22,
+            'vetten' => 53,
         ]);
 
         DB::table('users')->insert([

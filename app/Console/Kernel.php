@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -25,7 +26,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function() {
-            DB::table('users')->where('name', 'Marc')->update([                
+            DB::table('users')->update([                
                 'groente' => 0,
                 'fruit' => 0,
                 'brood' => 0,
@@ -35,7 +36,16 @@ class Kernel extends ConsoleKernel
                 'kaas' => 0,
                 'vetten' => 0,
             ]);
-        })->everyMinute();
+        })->daily();
+
+        $schedule->call(function() {
+            DB::table('users')->update([                
+                'vis' => 0,
+                'peulvruchten' => 0,
+                'vlees' => 0,
+                'ei' => 0,
+            ]);
+        })->weekly();
     }
 
     /**
