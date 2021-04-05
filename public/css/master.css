@@ -10,71 +10,105 @@ html{
 }
 
 body{
-    font-size: 2rem;
-    padding: 2rem;
-    background-color: #903749;
+    font-size: 1.8rem;
+    padding: 3rem;
+    background-color: #EEEEEE;
     font-family: sans-serif;
 }
 
-.soorteerVeld{
+.invoerVeld{
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 2rem;
+    border: 1px solid #0084FF;
+    box-sizing: border-box;
+    margin-bottom: 4rem;
 }
 
-.soorteerVeld__h1{
-    font-size: 200%;
+.invoerVeld__h1{
+    font-size: 2.4rem;
+    font-weight: 400;
 }
 
-.soorteerVeld__text_input{
-    margin:2rem;
-    width: 80%;
-    max-width: 35rem;
-    padding: 1rem 1rem;
+.invoerVeld__text_input{
+    background-color: #FFFFFF;
+    border: 2px solid #0084FF;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+    height: 4rem;
+    width: 100%;
+    max-width: 49rem;
+    padding: 0 2rem;
+    font-size: 100%;
+}
+
+.invoerVeld__button{
+    background: #0084FF;
+    border-radius: 6px;
+    width: 19.5rem;
+    height: 4rem;
+    color: #FFFFFF;
+    font-size: 100%;
     border: none;
-    border-radius: 0.4rem;
-    font-size: 1.6rem;
+    font-weight: 400;
+    transition: 0.3s all;
 }
 
-.soorteerVeld__button{
-    padding: 1.5rem 4rem;
-    background-color: #903749;
-    border: 0.3rem solid black;
-    font-size: 1.6rem;
-    transition: all 0.3s;
-}
-
-.soorteerVeld__button:hover{
-    border-radius: 2rem;
+.invoerVeld__button:hover{
+    border-radius: 10rem;
+    background-color: #89C6FF;
     cursor: pointer;
-    color: #e84545;
-    border-color: #e84545;
+    color: #000000;
 }
 
-.soorteerVeld__img_veld{
-    margin: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.soorteerVeld__figure{
-    text-align: center;
-    width: 33.3%;
-}
-
-.soorteerVeld__bak_img{
-    width:50%;
-}
-
-.soorteerVeld__bak_imgblur{
-    width:50%;
-    background-color: #a7ff83;
-    border-radius: 2rem;
-}
-
-.soorteerVeld__figure > figcaption{
+.bakken_card{
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid #0084FF;
+    box-sizing: border-box;
     margin-top: 2rem;
+}
+
+.bakken_card__fig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.bakken_card__img{
+    width: 50%;
+}
+
+.bakken_volCard{
+    background-color: #F05454;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid #0084FF;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* utility classes */
+.u-back-grey{
+    background-color: #7393A7;
+}
+
+.u-back-orange{
+    background-color: #F08A5D;
+}
+
+.u-back-green{
+    background-color: #7FCD91;
 }

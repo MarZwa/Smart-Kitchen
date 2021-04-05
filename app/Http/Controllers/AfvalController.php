@@ -10,6 +10,9 @@ class AfvalController extends Controller
         return view('afval.index',[
             'afval_naam' => \App\Models\Afval::all('naam'),
             'status' => \App\Models\StatusBak::all()->first(),
+            'vol_rest' => \App\Models\VolheidBakken::all()->first(),
+            'vol_plastic' => \App\Models\VolheidBakken::where('bak', 'Plastic')->get()->first(),
+            'vol_gft' => \App\Models\VolheidBakken::where('bak', 'Gft')->get()->first(),
         ]);
     }
 

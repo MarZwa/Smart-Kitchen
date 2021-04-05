@@ -33,6 +33,15 @@ while True:
         else:
             port.write("l3")
             time.sleep(5)
+        
+        rcv = port.readline().strip()
+        if(rcv == 'B1V'):
+            print('ok')
+            mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Rest'")
+        elif(rcv == 'B2V'):
+             mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Plastic'")
+        elif(rcv == 'B3V'):
+             mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Gft'")
 
     time.sleep(1)
     mydb.commit()
