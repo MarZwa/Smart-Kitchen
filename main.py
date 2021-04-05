@@ -17,7 +17,6 @@ mycursor = mydb.cursor()
 while True:
     mycursor.execute("SELECT * FROM status_bak")
     for x in mycursor:
-        print(x[1])
         if x[1] == 'Rest':
             port.write("l1")
             time.sleep(5)
@@ -32,16 +31,21 @@ while True:
             mycursor.execute("UPDATE status_bak SET status = Null")
         else:
             port.write("l3")
-            time.sleep(5)
+            time.sleep(1)
         
         rcv = port.readline().strip()
         if(rcv == 'B1V'):
-            print('ok')
             mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Rest'")
         elif(rcv == 'B2V'):
              mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Plastic'")
         elif(rcv == 'B3V'):
              mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Gft'")
+        elif(rcv == 'B1L'):
+             mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Rest'")
+        elif(rcv == 'B2L'):
+             mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Plastic'")
+        elif(rcv == 'B3L'):
+             mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Gft'")
 
     time.sleep(1)
     mydb.commit()
