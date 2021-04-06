@@ -15,10 +15,10 @@ port = serial.Serial("/dev/ttyUSB0", baudrate=115200, timeout=3.0)
 mycursor = mydb.cursor()
 
 while True:
-    weight = port.readline().split()
-    if(len(weight) == 3):
-        updateQuery = "UPDATE user_foods SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE name = '" + weight[0] + "';"
-        mycursor.execute(updateQuery)
+    rfid = port.readline()
+    updateQuery = "UPDATE cutlery SET scanned = true WHERE rfid = '" + rfid + "';"
+    print(updateQuery)
+    # mycursor.execute(updateQuery)
 
     time.sleep(1)
     mydb.commit()
