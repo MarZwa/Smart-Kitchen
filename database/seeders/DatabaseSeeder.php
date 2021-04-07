@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             AfvalGftTableSeeder::class,
             StatusBakTableSeeder::class,
             VolheidBakkenTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }

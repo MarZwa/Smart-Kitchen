@@ -46,14 +46,20 @@ while True:
              mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Plastic'")
         elif(rcv == 'B3L'):
              mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Gft'")
-        else{
+        else:
             y = rcv.split()
-            print(y)
-            rfid = y[0]
-            bak = y[1]
-            hvl = y[2]
-        }
-        
+            if(len(y) >= 3):
+                rfid = y[0]
+                bak = y[1]
+                hvl = int(y[2])
+                if(bak == 'rest'):
+                    sql = "UPDATE users SET rest = rest + %s WHERE rfid = %s"
+                elif(bak == 'plastic'):
+                    sql = "UPDATE users SET plastic = plastic + %s WHERE rfid = %s"
+                elif(bak == 'gft'):
+                     sql = "UPDATE users SET gft = gft + %s WHERE rfid = %s"
+                val = (hvl, rfid)
+                mycursor.execute(sql, val)
 
     time.sleep(1)
     mydb.commit()

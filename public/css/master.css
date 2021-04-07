@@ -74,7 +74,7 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: 1px solid #0084FF;
     box-sizing: border-box;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .bakken_card__fig{
@@ -90,11 +90,9 @@ body{
 }
 
 .bakken_volCard{
-    background-color: #F05454;
     padding: 2rem;
     border-radius: 0.6rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border: 1px solid #0084FF;
     box-sizing: border-box;
     margin-top: 1rem;
     text-align: center;
@@ -103,12 +101,15 @@ body{
 /* utility classes */
 .u-back-grey{
     background-color: #7393A7;
+    border: none;
 }
 
 .u-back-orange{
     background-color: #F08A5D;
+    border: none;
 }
 
 .u-back-green{
     background-color: #7FCD91;
+    border: none;
 }

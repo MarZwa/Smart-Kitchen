@@ -28,8 +28,8 @@
             </section>
 
         @if($vol_rest-> vol == 1)
-            <section class="bakken_volCard">
-                <p>De bak is vol</p>
+            <section class="bakken_volCard u-back-grey">
+                <p>De rest bak is vol {{ $user_rest->name }} moet hem legen</p>
             </section>
         @endif
 
@@ -45,8 +45,8 @@
             </section>
         
         @if($vol_plastic-> vol == 1)
-            <section class="bakken_volCard">
-                <p>De bak is vol</p>
+            <section class="bakken_volCard u-back-orange">
+                <p>De plastic bak is vol {{ $user_plastic->name }} moet hem legen</p>
             </section>
         @endif
 
@@ -62,8 +62,8 @@
             </section>
         
         @if($vol_gft-> vol == 1)
-            <section class="bakken_volCard">
-                <p>De bak is vol</p>
+            <section class="bakken_volCard u-back-green">
+                <p>De gft bak is vol {{ $user_gft->name }} moet hem legen</p>
             </section>
         @endif
         </article>

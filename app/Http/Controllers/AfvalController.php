@@ -13,6 +13,9 @@ class AfvalController extends Controller
             'vol_rest' => \App\Models\VolheidBakken::all()->first(),
             'vol_plastic' => \App\Models\VolheidBakken::where('bak', 'Plastic')->get()->first(),
             'vol_gft' => \App\Models\VolheidBakken::where('bak', 'Gft')->get()->first(),
+            'user_rest' => \App\Models\Users::orderBy('rest', 'desc')->first(),
+            'user_plastic' => \App\Models\Users::orderBy('plastic', 'desc')->first(),
+            'user_gft' => \App\Models\Users::orderBy('gft', 'desc')->first(),
         ]);
     }
 
