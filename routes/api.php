@@ -15,7 +15,10 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::get('user/{id}', [ApiController::class, 'getUser']);
+Route::get('users', [ApiController::class, 'getUsers']);
+Route::get('products', [ApiController::class, 'getProducts']);
+Route::get('users/{id}', [ApiController::class, 'getUser']);
+Route::get('products/{id}', [ApiController::class, 'getProduct']);
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();

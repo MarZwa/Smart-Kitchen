@@ -15,11 +15,12 @@ class CreateProductUsageTable extends Migration
     {
         Schema::create('product_usage', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('user_name');
             $table->foreign("user_name")->references("name")->on("users");
-            $table->string('date'); //DD-MM-YYYY
             $table->integer('calories');
             $table->integer('alcohol');
+            $table->string('date'); //DD-MM-YYYY
         });
     }
 

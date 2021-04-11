@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 
 class UsersController extends Controller
 {
     public function index(){
         return view('users.index', [
-            'users' => Users::all(),
+            'users' => User::all(),
         ]);
     }
 
     public function show($id){
         return view('users.show', [
-            'user' => Users::find($id),
+            'user' => User::find($id),
         ]);
     }
 
     public function showUsage($id){
         return view('users.products', [
-            'products' => Users::find($id)->allProducts,
+            'products' => User::find($id)->allProducts,
         ]);
     }
 }

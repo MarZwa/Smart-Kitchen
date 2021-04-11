@@ -16,31 +16,35 @@ class ProductUsageSeeder extends Seeder
     public function run()
     {
         DB::table('product_usage')->insert([
+            'name' => 'Something',
             'user_name' => 'Bas',
-            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 0,
             'alcohol' => 0,
+            'date' => Carbon::today()->format('d-m-Y'),
         ]);
 
         DB::table('product_usage')->insert([
+            'name' => 'Something',
             'user_name' => 'Bas',
-            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 200,
             'alcohol' => 0,
+            'date' => Carbon::today()->format('d-m-Y'),
         ]);
 
         DB::table('product_usage')->insert([
+            'name' => 'Something',
             'user_name' => 'Bas',
-            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 0,
             'alcohol' => 1,
+            'date' => Carbon::today()->format('d-m-Y'),
         ]);
 
         DB::table('product_usage')->insert([
+            'name' => 'Something',
             'user_name' => 'Bas',
-            'date' => Carbon::today()->format('d-m-Y'),
             'calories' => 150,
             'alcohol' => 1,
+            'date' => Carbon::today()->format('d-m-Y'),
         ]);
     }
 }
