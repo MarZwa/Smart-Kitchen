@@ -42,10 +42,13 @@ while True:
              mycursor.execute("UPDATE volhied_bakken SET vol = true WHERE bak = 'Gft'")
         elif(rcv == 'B1L'):
              mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Rest'")
+             mycursor.execute("UPDATE users SET rest = 0")
         elif(rcv == 'B2L'):
              mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Plastic'")
+             mycursor.execute("UPDATE users SET plastic = 0")
         elif(rcv == 'B3L'):
              mycursor.execute("UPDATE volhied_bakken SET vol = false WHERE bak = 'Gft'")
+             mycursor.execute("UPDATE users SET gft = 0")
         else:
             y = rcv.split()
             if(len(y) >= 3):
