@@ -92,24 +92,24 @@ body{
     margin-left: 25%;
 }
 
-.grocery-heading {
+.grocery-heading, .storage-heading {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5rem 0;
 }
 
-.grocery-heading-grid, .grocery-info {
+.grocery-heading-grid, .grocery-info, .storage-heading-grid, .storage-info {
     display: flex;
     justify-content: space-between;
     margin: 0 5vw;
 }
 
-.grocery-info {
+.grocery-info, .storage-info {
     padding-bottom: 1.5rem;
 }
 
-.product-user-heading-product > p, .product-user-heading-user > p {
+.product-user-heading-product > p, .product-user-heading-user > p, .storage-user-heading-product > p, .storage-user-heading-user > p {
     font-weight: 700;
     margin-bottom: 2rem;
 }
@@ -179,12 +179,12 @@ body{
         /* overflow-y: hidden; */
     }
 
-    .grocery-heading {
+    .grocery-heading, .storage-heading {
         grid-column: 7 / span 2;
         display: inline-block;
     }
 
-    .grocery-heading-grid {
+    .grocery-heading-grid, .storage-heading-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0,1fr));
         grid-column: 4 / span 8;
@@ -204,7 +204,7 @@ body{
         margin: 3.5rem auto;
     }
 
-    .grocery-info {
+    .grocery-info, .storage-info {
         display: grid;
         grid-template-columns: repeat(4, minmax(0,1fr));
         grid-column: 4 / span 8;
@@ -212,13 +212,13 @@ body{
         padding: 0;
     }
 
-    .grocery-info-product {
+    .grocery-info-product, .storage-info-product {
         grid-column: span 1;
         margin: 1.5rem auto;
         padding-top: 1.5rem;
     }
 
-    .grocery-info-user {
+    .grocery-info-user, .storage-info-user {
         grid-column: 4 / span 1;
         margin: 1.5rem auto;
         padding-top: 1.5rem;

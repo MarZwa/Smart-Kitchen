@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGroceryTable extends Migration
+class CreateStorageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateGroceryTable extends Migration
      */
     public function up()
     {
-        Schema::create('grocery', function (Blueprint $table) {
-            $table->string('empty_product_name')->nullable();
-            $table->string('empty_user_name')->nullable();
+        Schema::create('storage', function (Blueprint $table) {
+            $table->string('add_product_name')->nullable();
+            $table->string('add_user_name')->nullable();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateGroceryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grocery');
+        Schema::dropIfExists('storage');
     }
 }

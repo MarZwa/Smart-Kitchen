@@ -5,10 +5,10 @@
             <section class="dashboard">
             @include('users.components.dashboard--profile')
             </section>
-            <section class="grocery-heading">
-                <h2>Boodschappenlijst</h2>
+            <section class="storage-heading">
+                <h2>Voorraadlijst</h2>
             </section>
-            <section class="grocery-heading-grid">
+            <section class="storage-heading-grid">
                 <section class="product-user-heading-product">
                     <p>Product</p>
                 </section>
@@ -16,13 +16,13 @@
                     <p>Wie</p>
                 </section>
             </section>
-            @foreach($groceries as $grocery)
-            <section class="grocery-info">
-                <section class="grocery-info-product">
-                    <p>{{$grocery->empty_product_name}}</p>
+            @foreach($storage as $storage)
+            <section class="storage-info">
+                <section class="storage-info-product">
+                    <p>{{$storage->add_product_name}}</p>
                 </section>
-                <section class="grocery-info-user">
-                    <p>{{$grocery->empty_user_name}}</p>
+                <section class="storage-info-user">
+                    <p>{{$storage->add_user_name}}</p>
                 </section>
             </section>
 

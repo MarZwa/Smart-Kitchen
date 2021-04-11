@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Shelf;
 use \App\Models\Grocery;
+use \App\Models\Storage;
 
 class ShelfController extends Controller
 {
@@ -25,6 +26,13 @@ class ShelfController extends Controller
         return view('groceries.grocerylist', [
             'user' => Shelf::find($id),
             'groceries' => Grocery::all(),
+        ]);
+    }
+
+    public function storage($id) {
+        return view('groceries.storagelist', [
+            'user' => Shelf::find($id),
+            'storage' => Storage::all(),
         ]);
     }
 }

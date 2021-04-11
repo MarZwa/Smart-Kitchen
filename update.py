@@ -11,13 +11,18 @@
 #     database="SmartKitchenDb"
 # )
 
-# com = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=3.0)
+# com = serial.Serial('/dev/ttyUSB1', baudrate=9600, timeout=3.0)
 
 # mycursor = mydb.cursor()
 
 # while True:
+
 #     rsc = com.readline()
-#     if(rsc in "8C E9 54 23"):
-#         mycursor.execute("UPDATE users SET scanned='Yes' WHERE rfid='8C:E9:54:23'")
+
+#     if "Add" in rsc:
+#         mycursor.execute("INSERT INTO grocery (add_product_name, add_user_name) VALUES (%s, %s)", (product_name, user))
+#     elif "Delete" in rsc:
+#         mycursor.execute("INSERT INTO grocery (empty_product_name, empty_user_name) VALUES (%s, %s)", (product_name, user))
+    
 #     time.sleep(1)
 #     mydb.commit()
