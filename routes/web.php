@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ShelfController;
+use \App\Http\Controllers\GroceryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/users', [ShelfController::class, 'index']);
+Route::get('/users/{id}', [ShelfController::class, 'show']);
+Route::get('/users/{id}/grocerylist', [ShelfController::class, 'grocery']);
+// Route::get('/rfid', [ShelfController::class, 'show']);
 
 Route::get('/', function () {
     return view('welcome');
