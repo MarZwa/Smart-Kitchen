@@ -14,6 +14,7 @@ class CreateCutleryTable extends Migration
     public function up()
     {
         Schema::create('cutlery', function (Blueprint $table) {
+            $table->id();
             $table->text('cutlery');
             $table->string('rfid')->nullable();
             $table->boolean('scanned')->default(false);
