@@ -3,24 +3,23 @@ import os
 import requests
 import json
 
-import mysql.connector
 import time
 from datetime import date
-
-mydb = mysql.connector.connect(
-    host='localhost',
-    user='laravel',
-    passwd='laravel',
-    database = 'SmartKitchenDB'
-)
 
 arduino = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=3.0)
 scanner = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=3.0)
 
-db_cursor = mydb.cursor()
-
 data = ""
 user = ''
+
+# Enter your Host IP + Port by typing in the console
+# format xxx.xxx.xxx.xxx:yyy
+ip = input('Enter your hosts IP + Port: ')
+url = f"http://{ip}/api/rfid"
+
+# Uncomment the line below to keep the host static
+# and enter your IP + Port on the {ip}
+#url = f"http://{ip}/api/rfid/"
 
 while True:
     arduino_rcv = arduino.readline().strip()
@@ -32,40 +31,43 @@ while True:
     # Eventually requesting the data that belongs to the rfid
     # Then storing the data in a string (own protocol + syntax, selfmade for Arduino -> See bottom of .py file) to eventually
     # be send as a byte to the Arduino.
-    if "UID tag :" in arduino_rcv:
-        rfid = arduino_rcv.lstrip("UID tag :")
-        data = "<;"
+    if "UID tag: " in arduino_rcv:
+        rfid = arduino_rcv.lstrip("UID tag: ")
         try:
-            db_cursor.execute("SELECT * FROM users WHERE rfid = %s", (rfid,))
-        except mysql.connector.Error as e:
-            print("Something went wrong: {}".format(e))
-        for x in db_cursor:
-            user_rfid = str(x[2])
-            data += str(x[2])
-            data += ";"
-            data += str(x[3])
-            data += ";"
-            data += str(x[4])
-            data += ";"
-            data += str(x[5])
-            data += ";"
-            data += str(x[6])
-            data += ";"
-        data += ";>"
-        data = data.encode('utf-8')
-        print(data)
-        arduino.write(data)
-        data = ""
+                # Sending a get request to subsystem using Larave Api database
+                r = requests.get(f"{url}/{rfid}")
+                r_text = str(r)
+                print("Get App API: " + r_text)
+                r.raise_for_status()
+
+                # Loading the received JSON and parsing it in to indiviual values (only extracting those needed)
+                # eventually storing them in variables and turning them in to a string (own protocol + syntax, selfmade for Arduino -> See bottom of .py file)
+                resp = json.loads(r.text)
+                rfid = resp[0]["rfid"]
+                name = resp[0]["name"]
+                calories = resp[0]["calories"]
+                alcohol = resp[0]["alcohol"]
+                cur_calories = resp[0]["current_calories"]
+                cur_alcohol = resp[0]["current_alcohol"]
+                data = f"<;{name};{calories};{alcohol};{cur_calories};{cur_alcohol};>"
+                data = data.encode('utf-8')
+                arduino.write(data)
+                data = ""
+        except requests.HTTPError as e:
+            print(e.response.text)
+
 
     # Check is the scanner rcv is not an empty byte and checking if the username is set
     # After that check if barcode scanner is true with an second check if the byte is empty
-    if scanner_rcv != b'' and user != '':
+    if scanner_rcv != b'' and name != '':
         barcode_scanned = True
         if barcode_scanned == True and scanner_rcv != b'':
             barcode = str(scanner_rcv, 'utf-8')
             try:
                 # Sending a get request to the OpenFoodFacts database
                 r = requests.get(f'https://world.openfoodfacts.org/api/v0/product/{barcode}.json')
+                r_text = str(r)
+                print("Get OpenFoodFacts API: " + r_text)
                 r.raise_for_status()
                 
                 # Loading the received JSON and parsing it in to indiviual values (only extracting those needed)
@@ -90,7 +92,6 @@ while True:
                     # setting the data string to an empty string
                     data = f"[;{product_name};{calories};{alcohol};]"
                     data = data.encode('utf-8')
-                    print(data)
                     arduino.write(data)
                     data = ""
 
@@ -101,9 +102,13 @@ while True:
                     today = date.today()
                     today = today.strftime('%d-%m-%Y')
 
-                    db_cursor.execute("INSERT INTO product_usage (name, user_name, calories, alcohol, date) VALUES (%s, %s, %s, %s, %s)", (product_name, user, calories, alcohol, today))
-                    db_cursor.execute("UPDATE users SET current_calories = (SELECT SUM(calories) AS totalCalories FROM product_usage WHERE user_name =%s) WHERE name =%s", (user, user,))
-                    db_cursor.execute("UPDATE users SET current_alcohol = (SELECT SUM(alcohol) AS totalAlcohol FROM product_usage WHERE user_name =%s) WHERE name =%s", (user, user,))
+                    # Creating a JSON and sending it by using a POST request to the Laravel Api
+                    # This request will trigger an insert and update on the database behind the Laravel app
+                    post_data = {'rfid':f'{rfid}', 'name':f'{product_name}', 'user_name':f'{name}', 'calories':f'{calories}', 'alcohol':f'{alcohol}', 'date':f'{today}'}
+                    post_date = json.dumps(post_data)
+                    s = requests.post(f'{url}/{rfid}/create', data=post_data)
+                    s_text = str(s)
+                    print("Post to App API: " + s_text)
                 else:
                     print(resp["status_verbose"])
             except requests.HTTPError as e:
@@ -111,9 +116,6 @@ while True:
         
 
     time.sleep(1)
-    mydb.commit()
-
-mydb.close()
 
 
 

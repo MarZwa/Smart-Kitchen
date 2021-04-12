@@ -20,7 +20,8 @@ class CreateProductUsageTable extends Migration
             $table->foreign("user_name")->references("name")->on("users");
             $table->integer('calories');
             $table->integer('alcohol');
-            $table->string('date'); //DD-MM-YYYY
+            $table->string('date');
+            $table->timestamps(); //DD-MM-YYYY
         });
     }
 

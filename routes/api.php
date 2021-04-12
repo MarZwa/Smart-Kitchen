@@ -20,6 +20,9 @@ Route::get('products', [ApiController::class, 'getProducts']);
 Route::get('users/{id}', [ApiController::class, 'getUser']);
 Route::get('products/{id}', [ApiController::class, 'getProduct']);
 
+Route::get('rfid/{rfid}', [ApiController::class, 'getUserRFID'])->whereAlphaNumeric('rfid');
+Route::post('rfid/{rfid}/create', [ApiController::class, 'create'])->whereAlphaNumeric('rfid');
+
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });

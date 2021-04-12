@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'rfid' => '2C 51 4E 23',
+            'rfid' => '2C514E23',
             'name' => 'Bas',
             'calories' => 2500,
             'alcohol' => 3,
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'rfid' => '12 28 6A 2D',
+            'rfid' => '12286A2D',
             'name' => 'Max',
             'calories' => 2000,
             'alcohol' => 4,
