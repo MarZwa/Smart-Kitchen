@@ -1,7 +1,7 @@
 <article class="progression-bar">
     <section class="progression-bar__heading">
-        <h3>Calories</h3>
-        <p>Calorie consumption</p>
+        <h3>Calorieën</h3>
+        <p>Calorie consumptie</p>
     </section>
     <section class="progression-bar__bar">
         <section class="progression-bar__text">

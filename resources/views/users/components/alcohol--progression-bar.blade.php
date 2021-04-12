@@ -1,7 +1,7 @@
 <article class="progression-bar">
     <section class="progression-bar__heading">
         <h3>Alcohol</h3>
-        <p>Alcohol consumption</p>
+        <p>Alcohol consumptie</p>
     </section>
     <section class="progression-bar__bar">
         <section class="progression-bar__text">

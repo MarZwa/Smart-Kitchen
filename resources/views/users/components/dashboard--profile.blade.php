@@ -16,8 +16,8 @@
     <section class="dashboard__profile__body">
         <ul class="dashboard__profile__menu">
             <li class="dashboard__profile__menu__item"><a class="dashboard__profile__menu__link" href="/users/{{$user->id}}">Dashboard</a></li>
-            <li class="dashboard__profile__menu__item"><a class="dashboard__profile__menu__link" href="/users/{{$user->id}}/products">Product Consumption</a></li>
-            <li class="dashboard__profile__menu__item">Nutritional Consumption</li>
+            <li class="dashboard__profile__menu__item"><a class="dashboard__profile__menu__link" href="/users/{{$user->id}}/products">Product Consumptie</a></li>
+            <li class="dashboard__profile__menu__item">Nutratie consumptie</li>
             <li class="dashboard__profile__menu__item">Edit Profile</li>
         </ul>
     </section>
