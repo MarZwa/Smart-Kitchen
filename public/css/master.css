@@ -17,6 +17,7 @@ body{
 }
 
 .datumVeld{
+    margin: 0 auto;
     background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 0.6rem;
@@ -29,6 +30,7 @@ body{
     border: 1px solid #0084FF;
     box-sizing: border-box;
     margin-bottom: 4rem;
+    max-width: 71rem;
 }
 
 .datumVeld__h1{
@@ -61,7 +63,15 @@ body{
     transition: 0.3s all;
 }
 
+.datumVeld__button:hover{
+    border-radius: 10rem;
+    background-color: #89C6FF;
+    cursor: pointer;
+    color: #000000;
+}
+
 .invoerVeld{
+    margin: 0 auto;
     background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 0.6rem;
@@ -74,6 +84,7 @@ body{
     border: 1px solid #0084FF;
     box-sizing: border-box;
     margin-bottom: 4rem;
+    max-width: 71rem;
 }
 
 .invoerVeld__h1{
@@ -110,6 +121,11 @@ body{
     background-color: #89C6FF;
     cursor: pointer;
     color: #000000;
+}
+
+.bakken{
+    max-width: 71rem;
+    margin: 0 auto;
 }
 
 .bakken_card{
@@ -172,6 +188,35 @@ body{
         width:21%;
     }
 
+}
+
+@media only screen and (min-width: 64rem){
+    .datumVeld{
+        margin-bottom: 8rem;
+    }
+
+    .invoerVeld{
+        margin-bottom: 8rem;
+    }
+
+    .bakken{
+        grid-template-columns: repeat(3,1fr);
+        max-width: none;
+    }
+
+    .bakken>section:nth-child(3){
+        grid-column: 3;
+        height: 100%;
+        min-height: 0rem;
+    }
+
+    .bakken>section:nth-child(3)>.bakken_card{
+        height: unset;
+    }
+
+    .bakken>section:nth-child(3)>.bakken_card>.bakken_card__fig>.bakken_card__img{
+        width:50%;
+    }
 }
 
 /* utility classes */
