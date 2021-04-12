@@ -143,6 +143,37 @@ body{
     text-align: center;
 }
 
+@media only screen and (min-width: 48rem){
+    .bakken{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:4rem;
+    }
+
+    .bakken_card{
+        margin-top: 0;
+    }
+
+    .bakken>section:nth-child(3){
+        grid-column: 1/3;
+        height: 75%;
+        min-height: 21.9rem;
+    }
+
+    .bakken>section:nth-child(3)>.bakken_card{
+        height: 100%;
+    }
+
+    .bakken>section:nth-child(3)>.bakken_card>.bakken_card__fig{
+        height: 100%;
+    }
+
+    .bakken>section:nth-child(3)>.bakken_card>.bakken_card__fig>.bakken_card__img{
+        width:21%;
+    }
+
+}
+
 /* utility classes */
 .u-back-grey{
     background-color: #7393A7;
