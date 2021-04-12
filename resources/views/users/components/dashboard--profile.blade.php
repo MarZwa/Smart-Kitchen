@@ -11,7 +11,7 @@
         <figure class="dashboard__profile__picture">
             <img src="/img/profile-placeholder.png" alt="profile placeholder">
         </figure>
-        <h2 class="dashboard__profile__name">{{$user->name}}</h2>
+
     </section>
     <section class="dashboard__profile__body">
         <ul class="dashboard__profile__menu">

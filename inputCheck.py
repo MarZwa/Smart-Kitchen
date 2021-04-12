@@ -5,7 +5,7 @@ import json
 from pprint import pprint
 import time
 
-arduino = serial.Serial('/dev/ttyUSB1', baudrate=9600, timeout=3.0)
+arduino = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=3.0)
 
 barcode_scanned = False
 

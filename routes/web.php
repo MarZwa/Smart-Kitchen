@@ -19,7 +19,7 @@ Route::get('/users', [ShelfController::class, 'index']);
 Route::get('/users/{id}', [ShelfController::class, 'show']);
 Route::get('/users/{id}/grocerylist', [ShelfController::class, 'grocery']);
 Route::get('/users/{id}/storagelist', [ShelfController::class, 'storage']);
-// Route::get('/rfid', [ShelfController::class, 'show']);
+Route::get('/rfid', [ShelfController::class, 'show']);
 
 Route::get('/', function () {
     return view('welcome');
