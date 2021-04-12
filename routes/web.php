@@ -17,6 +17,8 @@ Route::get('/', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
 
 Route::get('/status/{naam}', [\App\Http\Controllers\AfvalController::class, 'statusUpdate']);
 
+Route::get('/set/{dag}', [\App\Http\Controllers\AfvalController::class, 'setDag']);
+
 // Route::get('/', function(){
 //     return view('welcome');
 // });

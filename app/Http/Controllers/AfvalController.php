@@ -16,6 +16,7 @@ class AfvalController extends Controller
             'user_rest' => \App\Models\Users::orderBy('rest', 'desc')->first(),
             'user_plastic' => \App\Models\Users::orderBy('plastic', 'desc')->first(),
             'user_gft' => \App\Models\Users::orderBy('gft', 'desc')->first(),
+            'user_een' => \App\Models\Users::all()->first(),
         ]);
     }
 
@@ -25,6 +26,14 @@ class AfvalController extends Controller
         
         $status->status = $bak[0]->bak;
         $status->save();
+        return redirect("/");
+    }
+
+    public function setDag($dag){
+        $eerste_user = \App\Models\Users::all()->first();
+        
+        $eerste_user->ophaal_dag = $dag;
+        $eerste_user->save();
         return redirect("/");
     }
 }

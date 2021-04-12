@@ -8,12 +8,24 @@
         <script src="/js/main.js" defer></script>
         <title>Afval sorteren</title>
     </head>
-    <body>
+    <body onload="getDay('{{$user_een->ophaal_dag}}')">
+
+        <article class="datumVeld" id="js--datumVeld">
+            @if($user_een->ophaal_dag == Null)
+                <h1 class="datumVeld__h1" id="js--datumVeld__h1">Op welke dag wordt het vuilnis opgehaald?</h1>
+                <input class="datumVeld__text_input" type="text" id="js--dagInvoer">
+                <button class="datumVeld__button" onclick="setDag()">Dit is de dag</button>
+            @else
+            <h1 class="datumVeld__h1" id="js--datumVeld__h1">Het vuilnis wordt {{$user_een->ophaal_dag}} opgehaald</h1>
+            @endif
+        </article>
+
         <article class="invoerVeld">
             <h1 class="invoerVeld__h1">Wat wil je weggooien?</h1>
             <input class="invoerVeld__text_input" type="text" name="invoerAfval" id="js--invoerAfval">
             <button class="invoerVeld__button" onclick="getInvoer({{$afval_naam}})">Gooi weg</button>
         </article>
+
         <article class="bakken">
 
         @if($status->status == 'Rest')
