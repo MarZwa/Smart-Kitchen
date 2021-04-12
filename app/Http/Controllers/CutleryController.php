@@ -12,10 +12,10 @@ class CutleryController extends Controller
 
     protected function update() {
         $cutlery = \App\Models\Cutlery::all();
-        
-        foreach($cutlery as $huts) {
-            $huts->scanned = false;
-            $huts->save();
+
+        foreach($cutlery as $cutlery) {
+            $cutlery->scanned = false;
+            $cutlery->save();
         }
 
         return redirect('/cutlery');
