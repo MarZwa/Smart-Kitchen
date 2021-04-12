@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
+use DB;
 
 class UsersController extends Controller
 {
@@ -26,5 +27,25 @@ class UsersController extends Controller
             'user' => User::find($id),
             'products' => User::find($id)->allProducts,
         ]);
+    }
+
+    public function edit($id){
+        return view('users.edit', [
+            'user' => User::find($id),
+        ]);
+    }
+
+    public function update(Request $request, $id){
+        $id = $id;
+        $calories = $request->calories;
+        $alcohol = $request->alcohol;
+
+        DB::table('users')->where('id', $id)->update([
+            'calories' => $calories,
+            'alcohol' => $alcohol,
+
+        ]);
+
+        return redirect('/users/' . $id);
     }
 }
