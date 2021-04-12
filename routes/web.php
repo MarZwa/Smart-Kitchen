@@ -17,3 +17,5 @@ Route::get('/foods/{name}', [\App\Http\Controllers\UsersController::class, 'show
 
 Route::get('/cutlery', [\App\Http\Controllers\CutleryController::class, 'show']);
 Route::get('/', [\App\Http\Controllers\CutleryController::class, 'show']);
+
+Route::post('/cutlery/reset', [\App\Http\Controllers\CutleryController::class, 'update']);

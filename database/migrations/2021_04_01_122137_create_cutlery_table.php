@@ -18,6 +18,7 @@ class CreateCutleryTable extends Migration
             $table->text('cutlery');
             $table->string('rfid')->nullable();
             $table->boolean('scanned')->default(false);
+            $table->timestamps();
         });
     }
 

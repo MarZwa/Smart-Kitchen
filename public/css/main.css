@@ -130,14 +130,14 @@ body {
     z-index: 1;
 }
 
-.cutlery__cirkle:nth-of-type(1) {
+#cutlery1 {
     width: 18%;
     height: 25%;
     top: 19.5%;
     left: 4.75%;
 }
 
-.cutlery__cirkle:nth-of-type(2) {
+#cutlery2 {
     width: 5%;
     height: 27.55%;
     top: 19.5%;
@@ -145,147 +145,147 @@ body {
     transform: rotate(-47.5deg);    
 }
 
-.cutlery__cirkle:nth-of-type(3) {
+#cutlery3 {
     width: 18%;
     height: 15%;
     top: 7.5%;
     left: 15%;       
 }
 
-.cutlery__cirkle:nth-of-type(4) {
+#cutlery4 {
     width: 15%;
     height: 21%;
     top: 21.5%;
     left: 25%;    
 }
 
-.cutlery__cirkle:nth-of-type(5) {
+#cutlery5 {
     width: 12%;
     height: 17%;
     top: 23.5%;
     left: 26.5%;      
 }
 
-.cutlery__cirkle:nth-of-type(6) {
+#cutlery6 {
     width: 23%;
     height: 12.5%;
     top: 17.5%;
     left: 40%;    
 }
 
-.cutlery__cirkle:nth-of-type(7) {
+#cutlery7 {
     width: 23%;
     height: 12.5%;
     top: 24%;
     left: 41%;    
 }
 
-.cutlery__cirkle:nth-of-type(8) {
+#cutlery8 {
     width: 12.5%;
     height: 18%;
     top: 15.5%;
     left: 64.5%;   
 }
 
-.cutlery__cirkle:nth-of-type(9) {
+#cutlery9 {
     width: 12.5%;
     height: 18%;
     top: 25%;
     left: 74.25%;      
 }
 
-.cutlery__cirkle:nth-of-type(10) {
+#cutlery10 {
     width: 12.5%;
     height: 18%;
     top: 10%;
     left: 75%;     
 }
 
-.cutlery__cirkle:nth-of-type(11) {
+#cutlery11 {
     width: 12.5%;
     height: 18%;
     top: 34%;
     left: 84%;     
 }
 
-.cutlery__cirkle:nth-of-type(12) {
+#cutlery12 {
     width: 12.5%;
     height: 18%;
     top: 19%;
     left: 84.5%; 
 }
 
-.cutlery__cirkle:nth-of-type(13) {
+#cutlery13 {
     width: 18%;
     height: 49%;
     top: 41%;
     left: 4%;    
 }
 
-.cutlery__cirkle:nth-of-type(14) {
+#cutlery14 {
     width: 6%;
     height: 40%;
     top: 47%;
     left: 18%;     
 }
 
-.cutlery__cirkle:nth-of-type(15) {
+#cutlery15 {
     width: 7%;
     height: 43%;
     top: 44%;
     left: 23%;    
 }
 
-.cutlery__cirkle:nth-of-type(16) {
+#cutlery16 {
     width: 7%;
     height: 43%;
     top: 44%;
     left: 28.25%;     
 }
 
-.cutlery__cirkle:nth-of-type(17) {
+#cutlery17 {
     width: 37%;
     height: 53%;
     top: 34.5%;
     left: 33.5%;     
 }
 
-.cutlery__cirkle:nth-of-type(18) {
+#cutlery18 {
     width: 25%;
     height: 36%;
     top: 43.3%;
     left: 39.6%;     
 }
 
-.cutlery__cirkle:nth-of-type(19) { 
+#cutlery19 { 
     width: 30%;
     height: 44%;
     top: 39%;
     left: 37%;  
 }
 
-.cutlery__cirkle:nth-of-type(20) {
+#cutlery20 {
     width: 7.5%;
     height: 44%;
     top: 43%;
     left: 68.5%;     
 }
 
-.cutlery__cirkle:nth-of-type(21) {
+#cutlery21 {
     width: 7.5%;
     height: 42%;
     top: 44%;
     left: 74.5%;     
 }
 
-.cutlery__cirkle:nth-of-type(22) {
+#cutlery22 {
     width: 7.5%;
     height: 42%;
     top: 44%;
     left: 80.5%;    
 }
 
-.cutlery__cirkle:nth-of-type(23) {
+#cutlery23 {
     width: 7.5%;
     height: 34%;
     top: 52%;
@@ -316,6 +316,13 @@ body {
 .cutlery__list__exception {
     grid-row: 1;
     grid-column: 2;
+}
+
+@media (min-width: 608px) {
+    .cutlery__list__exception {
+        grid-row: auto;
+        grid-column: auto;       
+    }
 }
 
 .button {
