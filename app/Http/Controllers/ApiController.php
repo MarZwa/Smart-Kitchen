@@ -15,7 +15,7 @@ class ApiController extends Controller
             return response($user, 200);
           } else {
             return response()->json([
-              "message" => "User not found"
+              "message" => "Gebruiker niet gevonden"
             ], 404);
           }
     }
@@ -26,7 +26,7 @@ class ApiController extends Controller
           return response($user, 200);
         } else {
           return response()->json([
-            "message" => "User not found"
+            "message" => "Gebruiker niet gevonden"
           ], 404);
         }
   }
@@ -37,7 +37,7 @@ class ApiController extends Controller
           return response($product, 200);
         } else {
           return response()->json([
-            "message" => "Product not found"
+            "message" => "Gebruiker niet gevonden"
           ], 404);
         }
     }
@@ -74,7 +74,7 @@ class ApiController extends Controller
       $product->save();
 
       return response()->json([
-          "message" => "Product record created"
+          "message" => "Product record toegevoegd"
       ], 201);
 
       

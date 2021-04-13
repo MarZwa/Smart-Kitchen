@@ -79,9 +79,15 @@ while True:
                         calories = resp["product"]["nutriments"]["energy-kcal_serving"]
                     else:
                         if "energy-kcal" in resp["product"]["nutriments"]:
-                            calories = (resp["product"]["nutriments"]["energy-kcal"] / 10)
+                            if resp["product"]["nutriments"]["energy-kcal"] < 100:
+                                calories = resp["product"]["nutriments"]["energy-kcal"]
+                            else:
+                                calories = (resp["product"]["nutriments"]["energy-kcal"] / 10)
                         elif "energy_prepared_value" in resp["product"]["nutriments"]:
-                            calories = int((resp["product"]["nutriments"]["energy_prepared_value"] * 0.239006) / 10)
+                            if (resp["product"]["nutriments"]["energy_prepared_value"] * 0.239006) < 100:
+                                calories = int((resp["product"]["nutriments"]["energy_prepared_value"] * 0.239006))
+                            else: 
+                                calories = int((resp["product"]["nutriments"]["energy_prepared_value"] * 0.239006) / 10)
                     if "alcohol" in resp["product"]["nutriments"]:
                         alcohol = int(resp["product"]["nutriments"]["alcohol"] / 5)
                     else:
