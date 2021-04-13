@@ -1,6 +1,5 @@
 __author__ = "Bas Barg"
 __copyright__ = "Copyright 2021, Bas Barg"
-__license__ = "GPL"
 __version__ = "2.0"
 __email__ = "basbarg@gmail.com"
 
