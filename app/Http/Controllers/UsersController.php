@@ -20,7 +20,7 @@ class UsersController extends Controller
         return view('users.show', [
             $name = User::find($id)->name,
             'user' => User::find($id),
-            'products' => ProductUsage::orderBy('created_at', 'desc')->take(4)->where('user_name', $name)->get(),
+            'products' => ProductUsage::orderBy('created_at', 'desc')->take(4)->where('user_name', $name)->where('date', Carbon::now()->format('d-m-Y'))->get(),
         ]);
     }
 

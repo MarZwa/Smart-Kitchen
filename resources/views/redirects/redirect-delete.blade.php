@@ -11,7 +11,7 @@
                 @method('DELETE')
                 @csrf
                 <section class="redirect-page__form-section">
-                    <label for="name"> Vul "{{$user->name}}"in ter comfirmatie </label>
+                    <label for="name"> Vul "{{$user->name}}" in ter comfirmatie </label>
                     <input class="redirect-page__form__input" name="name" id="name" type="text"></input>
                 </section>
                 
