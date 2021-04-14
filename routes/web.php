@@ -16,7 +16,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('cleaning/{id}', function ($id) {
+    return view('user');
+});
 
 Route::get('/cleaning', function () {
-    return view('cleaning');
+    return view('cleaning', );
 });
+
+

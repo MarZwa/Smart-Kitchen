@@ -60,6 +60,7 @@ header{
 }
 
 .index__nav{
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -88,7 +89,7 @@ header{
 .index__card:hover{
     background: var(--c-light-alt-bg);
     border: 2rem;
-    transform: translateY(-0.5rem);
+    
     box-shadow: 0.9rem 3rem 2rem var(--c-dark-bg);
     border: 0.4rem solid var(--c-main-accent);  
 }

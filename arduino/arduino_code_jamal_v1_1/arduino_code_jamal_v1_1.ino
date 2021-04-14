@@ -14,14 +14,15 @@ const int RED_BTN = 52;
 const int WHITE_BTN = 53;
 const int NFC_LED = A0;
 
-const int BAUDRATE = 115200;
+// Variable to save current user
+String CURRENT_USER;
+
+const long BAUDRATE = 115200;
 
 PN532_HSU pn532hsu(Serial1);
 PN532 nfc(pn532hsu);
 
 int readNFCTagDec = 0;
-unsigned int hex_num;
-int NFC_id;
 
 void setup(void)
 {
@@ -47,25 +48,23 @@ void setup(void)
   }
 
   lcd.lineWrap();
-
   nfc.begin();
 
   uint32_t versiondata = nfc.getFirmwareVersion();
 
   if (!versiondata)
   {
-
-    while (1)
-      ; // Halt
+    lcd.print(versiondata);
+    while (1);
   }
 
   // Configure board to read RFID tags
   nfc.SAMConfig();
+  LCDReset();
 }
 
 void loop(void)
 {
-
   boolean success; // Variable to indicate found card
 
   uint8_t uid[] = {0, 0, 0, 0, 0, 0, 0}; // Buffer to store the returned UID
@@ -80,13 +79,6 @@ void loop(void)
     Serial.print("NFC");
     Serial.println("");
 
-    hex_num = uid[0] << 24;
-    hex_num += uid[1] << 16;
-    hex_num += uid[2] << 8;
-    hex_num += uid[3];
-
-    NFC_id = (int)hex_num;
-
     String rfid_uid = "";
 
     Serial.println();
@@ -100,17 +92,37 @@ void loop(void)
     }
     Serial.println();
     Serial.println(rfid_uid);
-    delay(2000);
+    delay(1000);
     digitalWrite(NFC_LED, LOW);
-    LCDSerialInputCheck();
+    if (Serial.available())
+    {
+      // wait some time for rest of message to arrive
+      delay(100);
+      // Clear the display before showing the new message
+      lcd.clear();
+      // print the message on the LCD
+      while (Serial.available() > 0)
+      {
+        char c;
+        c = Serial.read();
+        // drop CR and LF character
+        if (c != '\r' && c != '\n')
+        {
+          lcd.write(c);
+        }
+      }
+    }
+    delay(1000);
+    TaskAssignment(CURRENT_USER);
+    LCDReset();
+    // LCDPiInput();
   }
 
   // check to see if characters available
   // indicating a message is coming in
 
   // Tijdelijke line om de reset uit te voeren
-  delay(2000);
-  LCDReset();
+
 }
 
 void LCDReset(void)
@@ -124,7 +136,28 @@ void LCDReset(void)
   }
 }
 
-void LCDSerialInputCheck(void)
+void serialInputToString()
+{
+  if (Serial.available())
+  {
+    // wait some time for rest of message to arrive
+    delay(100);
+    // Clear the display before showing the new message
+    lcd.clear();
+    // print the message on the LCD
+    while (Serial.available() > 0)
+    {
+      char c;
+      c = Serial.read();
+      // drop CR and LF character
+      if (c != '\r' && c != '\n')
+      {
+      }
+    }
+  }
+}
+
+void LCDPiInput(void)
 {
   if (Serial.available())
   {
@@ -144,4 +177,40 @@ void LCDSerialInputCheck(void)
       }
     }
   }
+}
+
+void TaskAssignment(String USERNAME)
+{
+  String taak;
+  lcd.clear();
+  lcd.print("Druk een knop om je taak te kiezen.");
+  lcd.setCursor(0, 2);
+  lcd.print("Rood: Stofzuigen");
+  lcd.setCursor(0, 3);
+  lcd.print("Wit:  Afwas");
+  while (true)
+  {
+    if (digitalRead(WHITE_BTN))
+    {
+      lcd.write("Start: Afwas. De sensoren gaan nu aan.");
+      Serial.println(USERNAME);
+      Serial.println("Afwas.");
+      if (digitalRead(RED_BTN)) {
+            break;
+          };
+    }
+    if (digitalRead(RED_BTN))
+    {
+      lcd.write("Start: Stofzuigen. De sensoren gaan nu aan.");
+      Serial.println(USERNAME);
+      Serial.println("Stofzuigen.");
+      if (digitalRead(WHITE_BTN)) {
+            break;
+          };
+    }
+  }
+  Serial.println("Voltooid");
+  lcd.clear();
+  lcd.print("Taak voltooid! Systeem keert terug naar het startscherm.");
+  delay(2000);
 }

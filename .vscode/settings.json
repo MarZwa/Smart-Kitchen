@@ -2,5 +2,6 @@
     "arduino.ignoreBoards": [
     
     ],
+    "arduino.path": "/home/$user/bin",
     "arduino.useArduinoCli": true
 }
