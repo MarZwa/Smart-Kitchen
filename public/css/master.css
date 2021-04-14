@@ -140,13 +140,18 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
     list-style: none;
     margin-top: 1rem;
     overflow-y: scroll;
     width: 100%;
+    height: 100%;
+}
+
+.no-scroll-wrapper{
+    overflow-y: hidden;
 }
 
 .product{
@@ -404,7 +409,7 @@ body{
     }
 
     .product{
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .progression-bar{

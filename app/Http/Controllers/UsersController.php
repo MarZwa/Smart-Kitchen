@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\ProductUsage;
 use Carbon\Carbon;
 use DB;
 
@@ -17,8 +18,9 @@ class UsersController extends Controller
 
     public function show($id){
         return view('users.show', [
+            $name = User::find($id)->name,
             'user' => User::find($id),
-            'products' => User::find($id)->allProducts->where('date', Carbon::now()->format('d-m-Y')),
+            'products' => ProductUsage::orderBy('created_at', 'desc')->take(4)->where('user_name', $name)->get(),
         ]);
     }
 
