@@ -1,10 +1,17 @@
-const menu_icon = document.getElementsByClassName("dashboard__menu-icon")[0];
-const dashboard_profile = document.getElementsByClassName("dashboard__profile")[0];
+const navigation_icon = document.getElementsByClassName("navigation-icon")[0];
+const navigation = document.getElementsByClassName("navigation__menu")[0];
+const dashboard_navigation = document.getElementsByClassName("dashboard-navigation__profile")[0];
 const html = document.getElementsByTagName('html')[0];
 
 function changeIcon() {
-    menu_icon.classList.toggle("change");
-    dashboard_profile.classList.toggle("visible");
+    navigation_icon.classList.toggle("change");
+    navigation.classList.toggle("visible");
+    html.classList.toggle('no-scroll');
+}
+
+function changeIconDashboard() {
+    navigation_icon.classList.toggle("change");
+    dashboard_navigation.classList.toggle("visible");
     html.classList.toggle('no-scroll');
 }
 
