@@ -141,7 +141,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
     gap: 1rem;
