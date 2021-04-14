@@ -26,8 +26,9 @@ class UsersController extends Controller
 
     public function showUsage($id){
         return view('users.products', [
+            $name = User::find($id)->name,
             'user' => User::find($id),
-            'products' => User::find($id)->allProducts,
+            'products' => ProductUsage::orderBy('created_at', 'desc')->where('user_name', $name)->get(),
         ]);
     }
 
