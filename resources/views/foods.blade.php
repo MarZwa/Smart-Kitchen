@@ -8,8 +8,8 @@
     <h1 class="u-header">Voedingsmiddelen tracker</h1>
     <!-- <article class="buttonSection">
         <button class="buttonSection__button"><a href="/foods/{{ $user -> name }}">Overzicht</a></button>
-        <button class="buttonSection__button" href="/foods/daily/{{ $user -> name }}">Dagelijks</button>
-        <button class="buttonSection__button" href="/foods/weekly/{{ $user -> name }}">Wekelijks</button>
+        <button class="buttonSection__button"><a href="/foods/daily/{{ $user -> name }}">Dagelijks</a></button>
+        <button class="buttonSection__button"><a href="/foods/weekly/{{ $user -> name }}">Dagelijks</a></button>
     </article> -->
     <ul class="u-grid-12 u-grid-gap-2 u-desktop-width">
         <li class="u-list-style-none foodCard u-display-flex">

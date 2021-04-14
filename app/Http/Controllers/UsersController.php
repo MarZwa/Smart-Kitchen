@@ -17,13 +17,13 @@ class UsersController extends Controller
         $foods = \App\Models\Foods::all()->first();
         $user = \App\Models\Users::find($name);
 
-        return view('foodsDaily', ['foods' => $foods, 'user' => $user]);
+        return view('dailyFoods', ['foods' => $foods, 'user' => $user]);
     }
 
     protected function showWeeklyFoods($name) {
         $foods = \App\Models\Foods::all()->first();
         $user = \App\Models\Users::find($name);
 
-        return view('foodsWeekly', ['foods' => $foods, 'user' => $user]);
+        return view('weeklyFoods', ['foods' => $foods, 'user' => $user]);
     }
 }
