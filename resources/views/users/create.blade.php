@@ -12,12 +12,12 @@
 
                 <section class="create-page__form-section">
                     <label for="name"> Naam </label>
-                    <input class="create-page__form__input" name="name" id="name" type="text"></input>
+                    <input class="create-page__form__input" name="name" id="name" type="text" required></input>
                 </section>
 
                 <section class="create-page__form-section">
                     <label for="rfid"> RFID (No spaces or ':') </label>
-                    <input class="create-page__form__input" name="rfid" id="rfid" type="text" placeholder="AABBCCDD"></input>
+                    <input class="create-page__form__input" name="rfid" id="rfid" type="text" placeholder="AABBCCDD" required></input>
                 </section>
 
                 <section class="create-page__form-section">
@@ -27,12 +27,12 @@
 
                 <section class="create-page__form-section">
                     <label for="calories"> Calories </label>
-                    <input class="create-page__form__input" name="calories" id="calories" type="number"></input>
+                    <input class="create-page__form__input" name="calories" id="calories" type="number" required></input>
                 </section>
 
                 <section class="create-page__form-section">
                     <label for="alcohol"> Alcohol </label>
-                    <input class="create-page__form__input" name="alcohol" id="alcohol" type="number"></input>
+                    <input class="create-page__form__input" name="alcohol" id="alcohol" type="number" required></input>
                 </section>
 
                 <section class="create-page__form-buttons create-page__buttons">
