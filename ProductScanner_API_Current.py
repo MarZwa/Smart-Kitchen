@@ -2,6 +2,8 @@ __author__ = "Bas Barg"
 __copyright__ = "Copyright 2021, Bas Barg"
 __version__ = "2.0"
 __email__ = "basbarg@gmail.com"
+# This code needs to be run in python3
+# Use python3 {name}.py to execute
 
 
 import serial
