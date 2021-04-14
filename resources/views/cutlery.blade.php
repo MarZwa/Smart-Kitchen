@@ -38,15 +38,15 @@
                 <li>Servet</li>
                 <li>Salade vork</li>
                 <li>Vis vork</li>
-                <li>Dinner vork</li>
-                <li>Dinner bord</li>
+                <li>Diner vork</li>
+                <li>Diner bord</li>
                 <li>Soep kom</li>                
             </ol>
             <ol start="19">
                 <li>Salade bord</li>
-                <li>Dinner mes</li>
+                <li>Diner mes</li>
                 <li>Salade mes</li>
-                <li>Dinner lepel</li>
+                <li>Diner lepel</li>
                 <li>Soep lepel</li>                
             </ol>
         </section>
