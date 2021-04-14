@@ -1,13 +1,13 @@
 @extends('default')
 
 @section('title')
-    Voedingsmiddelen {{$user->name}}
+    Voedingsmiddelen {{$user->id}}
 @endsection
 
 @section('content')
     <h1 class="u-header">Voedingsmiddelen tracker</h1>
     <article class="buttonSection">
-        <button class="buttonSection__button"><a href="/foods/{{ $user -> name }}">Overzicht</a></button>
+        <button class="buttonSection__button"><a href="/foods/{{ $user -> id }}">Overzicht</a></button>
         <button class="buttonSection__button"><a href="/foods/daily/{{ $user -> id }}">Dagelijks</a></button>
         <button class="buttonSection__button"><a href="/foods/weekly/{{ $user -> id }}">Dagelijks</a></button>
     </article>

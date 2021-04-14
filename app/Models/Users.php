@@ -9,7 +9,7 @@ class Users extends Model
 {
     protected $table = 'users';
 
-    protected $primaryKey = 'name';
+    protected $primaryKey = 'id';
 
     use HasFactory;
 }

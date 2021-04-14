@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/foods/{name}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
-// Route::get('/foods/daily/{name}', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
-// Route::get('/foods/weekly/{name}', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);
+Route::get('/foods/{id}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
+Route::get('/foods/daily/{id}', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
+Route::get('/foods/weekly/{id}', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);

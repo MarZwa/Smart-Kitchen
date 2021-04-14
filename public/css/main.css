@@ -30,6 +30,11 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+    transition: 0.5s;
+}
+
+.buttonSection:hover {
+    border-radius: 5rem;
 }
 
 .foodCard {
@@ -150,4 +155,9 @@ h1 {
     text-align: center;
     font-size: 175%;
     margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }

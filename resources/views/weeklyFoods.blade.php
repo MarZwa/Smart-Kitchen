@@ -1,7 +1,7 @@
 @extends('default')
 
 @section('title')
-    Voedingsmiddelen {{$user->name}}
+    Voedingsmiddelen {{$user->id}}
 @endsection
 
 @section('content')
