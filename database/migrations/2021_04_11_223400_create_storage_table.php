@@ -14,8 +14,10 @@ class CreateStorageTable extends Migration
     public function up()
     {
         Schema::create('storage', function (Blueprint $table) {
+            $table->id();
             $table->string('add_product_name')->nullable();
             $table->string('add_user_name')->nullable();
+            $table->timestamps();
         });
     }
 

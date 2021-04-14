@@ -9,5 +9,4 @@ class Storage extends Model
 {
     protected $table = "storage";
 
-    public $timestamps = false;
 }

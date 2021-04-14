@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('rfid')->nullable();
-            $table->string('scanned');
             $table->timestamps();
         });
     }

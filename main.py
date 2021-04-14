@@ -13,91 +13,79 @@ mydb = mysql.connector.connect(
     database="SmartKitchenDb"
 )
 
-com = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=3.0)
-com2 = serial.Serial('/dev/ttyUSB1', baudrate=9600, timeout=3.0)
+com = serial.Serial('/dev/ttyUSB1', baudrate=9600, timeout=3.0)
+com2 = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=3.0)
 
 barcode_scanned = False
-mycursor = mydb.cursor()
 
-rfid = ['8C E9 54 23', '23 54 EA 38']
-sqlQueries = ['SELECT name FROM users WHERE rfid="8C:E9:54:23"', 'SELECT name FROM users WHERE rfid="23:54:EA:38"']
-addDel = ['Add', 'Delete']
-
-user = ''
+user = ""
+product_name = ""
+rfid = ""
 
 while True:
+    # Declaring the remote serial connection:
     rsc = com.readline().strip()
-    # rsc = rsc.decode('utf-8')
     rsc2 = com2.readline().strip()
+    rsc = rsc.decode('utf-8')
 
-
-    # if "UID tag :" in rsc:
-    #     rfid = rsc.lstrip("UID tag :")
-    #     try:
-    #         mycursor.execute("SELECT name FROM users WHERE rfid = %s", (rfid))
-    #     except mysql.connector.Error as e:
-    #         print("He joh! Je doen het nie goe: {}".format(e))
-    #     for x in mycursor:
-    #         print(x[0])
-    #     user = x[0]
-
+    # In my arduino code I first print 'UID tag :' before I print the RFID code. I did this for readablility when writing the arduino  code
+    # After reading this it strips away that string in front of the RFID code
+    # After this it requests the name of the user from the database:
+    if "UID tag :" in rsc:
+        rfid = rsc.lstrip("UID tag :")
+        try:
+            # This sends a GET request to the system with the Laravel Database
+            r = requests.get(f"http://192.168.1.243:8000/api/rfid/{rfid}")
+            r_text = str(r)
+            print("RFID lezen: " + r_text)
+            r.raise_for_status()
+            resp = json.loads(r.text)
+            rfid = resp[0]["rfid"]
+            user = resp[0]["name"]
+        except requests.HTTPError as e:
+            print(e.response.text)
     
-    if rfid[0].encode('utf-8') in rsc:
-        mycursor.execute(sqlQueries[0])
-        for x in mycursor:
-            print(x[0])
-        user = x[0]
-        
-
-    elif rfid[1].encode('utf-8') in rsc:
-        mycursor.execute(sqlQueries[1])
-        for x in mycursor:
-            print(x[0])
-        user = x[0]
-    
+    # This code first checks if the remote serial connection is not an empty byte and follows this check by checking if there is a username:
     if rsc2 != b'' and user != '':
         barcode_scanned = True
+        # This sets the variable barcode_scanned to True and checks if the byte is not empty:
         if barcode_scanned == True and rsc2 != b'':
             barcode = str(rsc2, 'utf-8')
             try:
+                # Here I use a GET request to the OpenFoodFacts database:
                 r = requests.get(f'https://world.openfoodfacts.org/api/v0/product/{barcode}.json')
+                r_text = str(r)
+                print("Gegevens uit OpenFoodFacts API opvragen: " + r_text)
                 r.raise_for_status()
                 resp = json.loads(r.text)
+                # Here I do a check if the product is in the database, if not it print the status_verbose which is just 'product not found'
+                # If the product is in the database it gets the productname of the product and stores it in a variable:
                 if resp["status_verbose"] != "product not found":
                     product_name = str(resp["product"]["product_name"])
-                    print(str(resp["product"]["product_name"]))
-                    barcode_scanned = False
-                    # os.system("python update.py")
-                    
-                    
+                    barcode_scanned = False 
                 else:
                     print(resp["status_verbose"])
             except requests.HTTPError as e:
                 print(e.response.text)
 
-    # if addDel[0].encode('utf-8') in rsc:
-    #     print("Bijgevoegd aan voorraad")
-    #     mycursor.execute("INSERT INTO storage (add_product_name, add_user_name) VALUES (%s, %s)", (product_name, user))
-    # elif addDel[1].encode('utf-8') in rsc:
-    #     print("Bijgevoegd aan boodschappenlijst")
-    #     mycursor.execute("INSERT INTO grocery (empty_product_name, empty_user_name) VALUES (%s, %s)", (product_name, user))
-    #     mycursor.execute("DELETE FROM storage WHERE add_product_name == ")
-
-    if addDel[0].encode('utf-8') in rsc:
+    # Here I do a check if the the serial connection reads an 'A' or a 'D', after this it checks if the productname is not empty.
+    # Reading an 'S' means add to storagelist.
+    # Reading a 'G' means add to grocerylist.
+    if "S" in rsc and product_name != "":
+        # Here I create a JSON with the data I need and send it to the Laravel API using a POST request
+        # This POST request triggers an database insert with that data
         gooi_data = {'product_name':f'{product_name}', 'user_name':f'{user}'}
-        d = requests.post("http://192.168.1.243:8000/api/users/1/create-storage", data=gooi_data)
+        d = requests.post(f"http://192.168.1.243:8000/api/rfid/{rfid}/create-storage", data=gooi_data)
         d_text = str(d)
-        print("Pats boem naar de API getyft: " + d_text)
+        print("POST request naar de API: " + d_text)
 
-    if addDel[1].encode('utf-8') in rsc:
+    if "G" in rsc and product_name != "":
+        # Here I create a JSON with the info I need and send it to the Laravel API using a POST request
+        # This POST request triggers an database insert with that data
         gooi_data = {'product_name':f'{product_name}', 'user_name':f'{user}'}
-        d = requests.post("http://192.168.1.243:8000/api/users/1/create-grocery", data=gooi_data)
+        d = requests.post(f"http://192.168.1.243:8000/api/rfid/{rfid}/create-grocery", data=gooi_data)
         d_text = str(d)
-        print("Pats boem naar de API getyft: " + d_text)
-
-
-    
-
+        print("POST request naar de API: " + d_text)
 
     time.sleep(1)
     mydb.commit()

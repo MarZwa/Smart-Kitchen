@@ -22,9 +22,11 @@ Route::get('users/{id}/grocerylist', [ApiController::class, 'getAllGroceryProduc
 
 Route::get('users/{id}/storagelist', [ApiController::class, 'getAllStorageProducts']);
 
-Route::post('users/{id}/create-grocery', [ApiController::class, 'createGrocery']);
+Route::post('rfid/{rfid}/create-grocery', [ApiController::class, 'createGrocery']);
 
-Route::post('users/{id}/create-storage', [ApiController::class, 'createStorage']);
+Route::post('rfid/{rfid}/create-storage', [ApiController::class, 'createStorage']);
+
+Route::get('rfid/{rfid}', [ApiController::class, 'getUserRFID'])->whereAlphaNumeric('rfid');
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });

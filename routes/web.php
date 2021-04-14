@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShelfController;
 use \App\Http\Controllers\GroceryController;
+use \App\Http\Controllers\StorageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,20 @@ use \App\Http\Controllers\GroceryController;
 
 Route::get('/users', [ShelfController::class, 'index']);
 Route::get('/users/{id}', [ShelfController::class, 'show']);
-Route::get('/users/{id}/grocerylist', [ShelfController::class, 'grocery']);
-Route::get('/users/{id}/storagelist', [ShelfController::class, 'storage']);
+// Route::get('/users/{id}/grocerylist', [ShelfController::class, 'grocery']);
+// Route::get('/users/{id}/storagelist', [ShelfController::class, 'storage']);
 Route::get('/rfid', [ShelfController::class, 'show']);
+
+Route::get('/grocerylist', [ShelfController::class, 'grocery']);
+Route::get('/storagelist', [ShelfController::class, 'storage']);
+
+
+// Route::get('/grocery/create', [GroceryController::class, 'createGrocery']);
+Route::delete('/grocery-clear', [GroceryController::class, 'destroyGrocery']);
+Route::delete('/storage-delete/{id}', [StorageController::class, 'destroyStorage']);
+
+Route::post('/grocery', [GroceryController::class, 'storeGrocery']);
+Route::post('/storage', [StorageController::class, 'storeStorage']);
 
 Route::get('/', function () {
     return view('welcome');

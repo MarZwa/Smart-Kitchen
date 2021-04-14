@@ -58,4 +58,15 @@ class ApiController extends Controller
         ], 201);
 
     }
+
+    public function getUserRFID($rfid){
+        if (Shelf::where('rfid', $rfid)->exists()) {
+            $user = Shelf::where('rfid', $rfid)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($user, 200);
+          } else {
+            return response()->json([
+              "message" => "Gebruiker niet gevonden"
+            ], 404);
+          }
+    }
 }

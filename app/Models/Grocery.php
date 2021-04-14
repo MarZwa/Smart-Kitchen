@@ -9,5 +9,4 @@ class Grocery extends Model
 {
     protected $table = "grocery";
 
-    public $timestamps = false;
 }

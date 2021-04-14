@@ -14,8 +14,10 @@ class CreateGroceryTable extends Migration
     public function up()
     {
         Schema::create('grocery', function (Blueprint $table) {
+            $table->id();
             $table->string('empty_product_name')->nullable();
             $table->string('empty_user_name')->nullable();
+            $table->timestamps();
         });
     }
 

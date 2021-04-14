@@ -22,17 +22,17 @@ class ShelfController extends Controller
         ]);
     }
 
-    public function grocery($id) {
+    public function grocery() {
         return view('groceries.grocerylist', [
-            'user' => Shelf::find($id),
-            'groceries' => Grocery::all(),
+            'user' => Shelf::all(),
+            'groceries' => Grocery::orderBy('created_at', 'desc')->get(),
         ]);
     }
 
-    public function storage($id) {
-        return view('groceries.storagelist', [
-            'user' => Shelf::find($id),
-            'storage' => Storage::all(),
+    public function storage() {
+        return view('storage.storagelist', [
+            'user' => Shelf::all(),
+            'storage' => Storage::orderBy('created_at', 'desc')->get(),
         ]);
     }
 }
