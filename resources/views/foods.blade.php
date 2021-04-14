@@ -1,16 +1,16 @@
 @extends('default')
 
 @section('title')
-    {{'Voedingsmiddelen'}}
+    Voedingsmiddelen
 @endsection
 
 @section('content')
     <h1 class="u-header">Voedingsmiddelen tracker</h1>
-    <article class="buttonSection">
-        <button>Overzicht</button>
-        <button>Dagelijks</button>
-        <button>Wekelijks</button>
-    </article>
+    <!-- <article class="buttonSection">
+        <button class="buttonSection__button"><a href="/foods/{{ $user -> name }}">Overzicht</a></button>
+        <button class="buttonSection__button" href="/foods/daily/{{ $user -> name }}">Dagelijks</button>
+        <button class="buttonSection__button" href="/foods/weekly/{{ $user -> name }}">Wekelijks</button>
+    </article> -->
     <ul class="u-grid-12 u-grid-gap-2 u-desktop-width">
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
@@ -64,56 +64,6 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Noten</h3>
-                </header>
-                <section class="foodCard__progressSection">
-                <label class="foodCard__label" for="noten">{{ $user -> noten }} g / {{ $foods -> noten }} g</label>
-                    <progress id="noten" class="foodCard__progress" value="{{ $user -> noten }}" max="{{ $foods -> noten }}"></progress>
-                </section>
-            </article>
-        </li>
-
-        <li class="u-list-style-none foodCard u-display-flex">
-            <article>
-                <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Melk en melkproducten</h3>
-                </header>
-                <section class="foodCard__progressSection">
-                <label class="foodCard__label" for="melk">{{ $user -> melk }} g / {{ $foods -> melk }} g</label>
-                    <progress id="melk" class="foodCard__progress" value="{{ $user -> melk }}" max="{{ $foods -> melk }}"></progress>
-                </section>
-            </article>
-        </li>
-
-        <li class="u-list-style-none foodCard u-display-flex">
-            <article>
-                <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Kaas</h3>
-                </header>
-                <section class="foodCard__progressSection">
-                <label class="foodCard__label" for="kaas">{{ $user -> kaas }} g / {{ $foods -> kaas }} g</label>
-                    <progress id="kaas" class="foodCard__progress" value="{{ $user -> kaas }}" max="{{ $foods -> kaas }}"></progress>
-                </section>
-            </article>
-        </li>
-
-        <li class="u-list-style-none foodCard u-display-flex">
-            <article>
-                <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Smeer- en bereidingsvetten</h3>
-                </header>
-                <section class="foodCard__progressSection">
-                    <label class="foodCard__label" for="vetten">{{ $user -> vetten }} g / {{ $foods -> vetten }} g</label>
-                    <progress id="vetten" class="foodCard__progress" value="{{ $user -> vetten }}" max="{{ $foods -> vetten }}"></progress>
-                </section>
-            </article>
-        </li>
-    </ul>
-
-    <ul class="u-grid-12 u-grid-gap-2 u-desktop-width">
-        <li class="u-list-style-none foodCard u-display-flex">
-            <article>
-                <header class="foodCard__header">
                     <h3 class="u-header" class="foodCard__heading">Vis</h3>
                 </header>
                 <section class="foodCard__progressSection">
@@ -155,6 +105,54 @@
                 <section class="foodCard__progressSection">
                 <label class="foodCard__label" for="ei">{{ $user -> ei }} st / {{ $foods -> ei }} st</label>
                     <progress id="ei" class="foodCard__progress" value="{{ $user -> ei }}" max="{{ $foods -> ei }}"></progress>
+                </section>
+            </article>
+        </li>
+
+        <li class="u-list-style-none foodCard u-display-flex">
+            <article>
+                <header class="foodCard__header">
+                    <h3 class="u-header" class="foodCard__heading">Noten</h3>
+                </header>
+                <section class="foodCard__progressSection">
+                <label class="foodCard__label" for="noten">{{ $user -> noten }} g / {{ $foods -> noten }} g</label>
+                    <progress id="noten" class="foodCard__progress" value="{{ $user -> noten }}" max="{{ $foods -> noten }}"></progress>
+                </section>
+            </article>
+        </li>
+
+        <li class="u-list-style-none foodCard u-display-flex">
+            <article>
+                <header class="foodCard__header">
+                    <h3 class="u-header" class="foodCard__heading">Melk en melkproducten</h3>
+                </header>
+                <section class="foodCard__progressSection">
+                <label class="foodCard__label" for="melk">{{ $user -> melk }} g / {{ $foods -> melk }} g</label>
+                    <progress id="melk" class="foodCard__progress" value="{{ $user -> melk }}" max="{{ $foods -> melk }}"></progress>
+                </section>
+            </article>
+        </li>
+
+        <li class="u-list-style-none foodCard u-display-flex">
+            <article>
+                <header class="foodCard__header">
+                    <h3 class="u-header" class="foodCard__heading">Kaas</h3>
+                </header>
+                <section class="foodCard__progressSection">
+                <label class="foodCard__label" for="kaas">{{ $user -> kaas }} g / {{ $foods -> kaas }} g</label>
+                    <progress id="kaas" class="foodCard__progress" value="{{ $user -> kaas }}" max="{{ $foods -> kaas }}"></progress>
+                </section>
+            </article>
+        </li>
+
+        <li class="u-list-style-none foodCard u-display-flex">
+            <article>
+                <header class="foodCard__header">
+                    <h3 class="u-header" class="foodCard__heading">Smeer- en bereidingsvetten</h3>
+                </header>
+                <section class="foodCard__progressSection">
+                    <label class="foodCard__label" for="vetten">{{ $user -> vetten }} g / {{ $foods -> vetten }} g</label>
+                    <progress id="vetten" class="foodCard__progress" value="{{ $user -> vetten }}" max="{{ $foods -> vetten }}"></progress>
                 </section>
             </article>
         </li>
