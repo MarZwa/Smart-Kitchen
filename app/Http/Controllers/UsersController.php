@@ -83,7 +83,13 @@ class UsersController extends Controller
         $user->rfid = $request->input('rfid');
         $user->alcohol = $request->input('alcohol');
         $user->calories = $request->input('calories');
-        $path = $request->file('image')->store('public/images');
+
+        if($request->has('image')){
+            $path = $request->file('image')->store('public/images');
+        } else {
+            $path = '/img/profile-placeholder.png';
+        }
+
         $user->image = $path;
 
         $user->current_calories = 0;
