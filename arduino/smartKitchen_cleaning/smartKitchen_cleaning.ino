@@ -82,15 +82,14 @@ void loop(void)
         lcd.setCursor(0, 1);
         lcd.print("gecontroleerd.");
         String rfid_uid = "";
-
         for (uint8_t i = 0; i < uidLength; i++)
         {
             // Serial.print("0x ");
             // Serial.print(uid[i], HEX);
             String uid_part = String(uid[i], HEX);
-            String uid_part_added = String(" 0x") + uid_part;
-            rfid_uid += uid_part_added;
+            rfid_uid += uid_part;
         }
+        rfid_uid.toUpperCase();
         Serial.println(rfid_uid);
         delay(1000);
         digitalWrite(NFC_LED, LOW);
