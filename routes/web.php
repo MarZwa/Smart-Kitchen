@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Models\User;
+use \App\Http\Controllers\UsersController;
+use \App\Http\Controllers\GroceryController;
+use \App\Http\Controllers\StorageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +39,11 @@ Route::get('/foods/{id}/weekly', [\App\Http\Controllers\UsersController::class, 
 
 Route::get('/cutlery', [\App\Http\Controllers\CutleryController::class, 'show']);
 Route::post('/cutlery/reset', [\App\Http\Controllers\CutleryController::class, 'update']);
+Route::get('/grocerylist', [GroceryController::class, 'grocery']);
+Route::get('/storagelist', [StorageController::class, 'storage']); 
+
+Route::delete('/grocery-clear', [GroceryController::class, 'destroyGrocery']);
+Route::delete('/storage-delete/{id}', [StorageController::class, 'destroyStorage']);
+
+Route::post('/grocery', [GroceryController::class, 'storeGrocery']);
+Route::post('/storage', [StorageController::class, 'storeStorage']);

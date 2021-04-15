@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
             StatusBakTableSeeder::class,
             VolheidBakkenTableSeeder::class,
             RecommendedFoodsTableSeeder::class,
-            UsersTableSeeder::class,
             CutleryTableSeeder::class,
+            UsersTableSeeder::class,
+            GroceryTableSeeder::class,
         ]);
     }
 }
