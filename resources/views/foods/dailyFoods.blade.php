@@ -11,16 +11,16 @@
 @section('content')
     <h1 class="u-header">Voedingsmiddelen tracker</h1>
     <article class="buttonSection">
-        <button class="buttonSection__button"><a href="/foods/{{ $user -> id }}">Overzicht</a></button>
-        <button class="buttonSection__button"><a href="/foods/{{ $user -> id }}/daily">Dagelijks</a></button>
-        <button class="buttonSection__button"><a href="/foods/{{ $user -> id }}/weekly">Wekelijks</a></button>
+        <a class="buttonSection__button" href="/foods/{{ $user -> id }}">Overzicht</a>
+        <a class="buttonSection__button" href="/foods/{{ $user -> id }}/daily">Dagelijks</a>
+        <a class="buttonSection__button" href="/foods/{{ $user -> id }}/weekly">Wekelijks</a>
     </article>
     <h2 class="u-text-align-center u-header u-margin-1rem">Dagelijks</h2>
     <ul class="u-grid-12 u-grid-gap-2 u-desktop-width">
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Groente</h3>
+                    <h3 class="u-header foodCard__heading">Groente</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="groente">{{ $user -> groente }} g / {{ $foods -> groente }} g</label>
@@ -33,7 +33,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Fruit</h3>
+                    <h3 class="u-header foodCard__heading">Fruit</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="fruit">{{ $user -> fruit }} g / {{ $foods -> fruit }} g</label>
@@ -46,7 +46,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Brood</h3>
+                    <h3 class="u-header foodCard__heading">Brood</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="brood">{{ $user -> brood }} st / {{ $foods -> brood }} st</label>
@@ -59,7 +59,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Graanproducten en aardappelen</h3>
+                    <h3 class="u-header foodCard__heading">Graanproducten en aardappelen</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="aardappelen">{{ $user -> aardappelen }} g / {{ $foods -> aardappelen }} g</label>
@@ -72,7 +72,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Noten</h3>
+                    <h3 class="u-header foodCard__heading">Noten</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="noten">{{ $foods -> noten - $user -> noten }} g te gaan!</label>
@@ -85,7 +85,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Melk en melkproducten</h3>
+                    <h3 class="u-header foodCard__heading">Melk en melkproducten</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="melk">{{ $user -> melk }} g / {{ $foods -> melk }} g</label>
@@ -98,7 +98,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Kaas</h3>
+                    <h3 class="u-header foodCard__heading">Kaas</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="kaas">{{ $user -> kaas }} g / {{ $foods -> kaas }} g</label>
@@ -111,7 +111,7 @@
         <li class="u-list-style-none foodCard u-display-flex">
             <article>
                 <header class="foodCard__header">
-                    <h3 class="u-header" class="foodCard__heading">Smeer- en bereidingsvetten</h3>
+                    <h3 class="u-header foodCard__heading">Smeer- en bereidingsvetten</h3>
                 </header>
                 <section class="foodCard__progressSection">
                     <label class="foodCard__label" for="vetten">{{ $user -> vetten }} g / {{ $foods -> vetten }} g</label>
