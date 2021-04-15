@@ -17,11 +17,7 @@ mycursor = mydb.cursor()
 while True:
     weight = port.readline().split()
     if(len(weight) == 3):
-<<<<<<< HEAD:scale.py
         updateQuery = "UPDATE users SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE rfid = '" + weight[0] + "';"
-=======
-        updateQuery = "UPDATE user_foods SET " + weight[1] + " = " + weight[1] + "+" + weight[2] + " WHERE tag = '" + weight[0] + "';"
->>>>>>> origin/development_marc_userStory1:main.py
         mycursor.execute(updateQuery)
 
     time.sleep(1)
