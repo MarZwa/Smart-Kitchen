@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
             'alcohol' => 3,
             'current_calories' => 0,
             'current_alcohol' => 0,
+            'ophaal_dag' => Null,
         ]);
 
         DB::table('users')->insert([
@@ -30,6 +31,7 @@ class UsersTableSeeder extends Seeder
             'alcohol' => 4,
             'current_calories' => 0,
             'current_alcohol' => 0,
+            'ophaal_dag' => Null,
         ]);
 
         DB::table('users')->insert([
@@ -38,6 +40,7 @@ class UsersTableSeeder extends Seeder
             'alcohol' => 12,
             'current_calories' => 0,
             'current_alcohol' => 0,
+            'ophaal_dag' => Null,
         ]);
 
         DB::table('users')->insert([
@@ -46,6 +49,7 @@ class UsersTableSeeder extends Seeder
             'alcohol' => 9,
             'current_calories' => 0,
             'current_alcohol' => 0,
+            'ophaal_dag' => Null,
         ]);
 
         DB::table('users')->insert([
@@ -54,6 +58,7 @@ class UsersTableSeeder extends Seeder
             'alcohol' => 6,
             'current_calories' => 0,
             'current_alcohol' => 0,
+            'ophaal_dag' => Null,
         ]);
     }
 }
