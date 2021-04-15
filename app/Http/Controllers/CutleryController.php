@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 class CutleryController extends Controller
 {
     protected function show() {
-        return view('cutlery', ['cutlery' => \App\Models\Foods::all()]);
+        return view('cutlery', ['cutlery' => \App\Models\Cutlery::all()]);
+    }
+
+    protected function update() {
+        $cutlery = \App\Models\Cutlery::all();
+
+        foreach($cutlery as $cutlery) {
+            $cutlery->scanned = false;
+            $cutlery->save();
+        }
+
+        return redirect('/cutlery');
     }
 }

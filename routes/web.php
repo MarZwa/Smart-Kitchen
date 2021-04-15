@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/foods/{id}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
 Route::get('/foods/{id}/daily', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
 Route::get('/foods/{id}/weekly', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);
+
+Route::get('/cutlery', [\App\Http\Controllers\CutleryController::class, 'show']);
+Route::post('/cutlery/reset', [\App\Http\Controllers\CutleryController::class, 'update']);
