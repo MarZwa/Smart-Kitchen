@@ -427,10 +427,10 @@ body{
 .products__filter-section__select{
     width: 100%;
     height: 4rem;
-    border: 0.2rem var(--profile-color);
     border-radius: 0.5rem;
     background-color:white;
     color: rgb(114, 114, 114);
+    border: 0.2rem solid var(--profile-color);
 }
 
 .products__filter-section__select option{
