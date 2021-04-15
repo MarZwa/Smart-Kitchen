@@ -15,7 +15,7 @@
         <ul class="dashboard-navigation__menu">
             <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/users/{{$user->id}}">Dashboard</a></li>
             <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/users/{{$user->id}}/products">Product Consumptie</a></li>
-            <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/">Nutratie consumptie</a></li>
+            <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/foods/{{$user->id}}">Nutratie consumptie</a></li>
             <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/user/{{$user->id}}/edit">Profiel Aanpassen</a></li>
             <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/users">Verander Profiel</a></li>
             <li class="dashboard-navigation__menu__item"><a class="dashboard-navigation__menu__link" href="/user/delete/{{$user->id}}">Verwijder Profiel</a></li>

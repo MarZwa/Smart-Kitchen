@@ -10,12 +10,12 @@
     <section class="main">
         <article class="profile-dashboard">
                 <section class="dashboard">
-                @include('users.components.navigation')
+                @include('components.navigation')
                 </section>
                 <section class="content">
                     <section class="storage-heading">
                         <h2>Voorraadlijst</h2>
-                        <form class="create-form" action="/storage" method="post" enctype="multipart/form-data">
+                        <form class="create-form" action="/store" method="post" enctype="multipart/form-data">
                             @csrf
             
                             <section class="create-form__section">

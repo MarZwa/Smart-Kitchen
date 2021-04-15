@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Models\User;
-use \App\Http\Controllers\UsersController;
 use \App\Http\Controllers\GroceryController;
 use \App\Http\Controllers\StorageController;
 
@@ -17,6 +16,8 @@ use \App\Http\Controllers\StorageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', [UsersController::class, 'index']);
 
 Route::get('/afval', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
 Route::get('/status/{naam}', [\App\Http\Controllers\AfvalController::class, 'statusUpdate']);
@@ -45,5 +46,7 @@ Route::get('/storagelist', [StorageController::class, 'storage']);
 Route::delete('/grocery-clear', [GroceryController::class, 'destroyGrocery']);
 Route::delete('/storage-delete/{id}', [StorageController::class, 'destroyStorage']);
 
+Route::post('/store', [StorageController::class, 'storeStorage']);
 Route::post('/grocery', [GroceryController::class, 'storeGrocery']);
-Route::post('/storage', [StorageController::class, 'storeStorage']);
+
+

@@ -10,13 +10,12 @@
 @section('content')
 <article class="profile-dashboard">
         <section class="dashboard">
-            @include('users.components.navigation')
+            @include('components.navigation')
         </section>
         <section class="content">
             <section class="grocery-heading">
                 <h2>Boodschappenlijst</h2>
                 <form class="create-form" action="/grocery" method="post" enctype="multipart/form-data">
-
                     @csrf
     
                     <section class="create-form__section">
@@ -33,11 +32,13 @@
                         <button class="create-form__button" type="submit">Zet op lijst</button>
                     </section>
                 </form>
-                <form action="/grocery-clear" method="post">
-                    @method('DELETE')
-                    @csrf
-                    <input class="grocery__delButton" type="submit" value="Leeg lijst">
-                </form>
+                @if(count($groceries) != 0)
+                    <form action="/grocery-clear" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <input class="grocery__delButton" type="submit" value="Leeg lijst">
+                    </form>
+                @endif 
             </section>
 
             @if(count($groceries) != 0)

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\User;
 use App\Models\ProductUsage;
 use DB;
 
-use App\Models\User;
 use App\Models\Grocery;
 use App\Models\Storage;
 
@@ -21,29 +19,10 @@ class ApiController extends Controller
           } else {
             return response()->json([
               "message" => "Gebruiker niet gevonden"
-=======
-
-
-class ApiController extends Controller
-{
-    public function getAllUsers() {
-        $users = User::all()->toJson(JSON_PRETTY_PRINT);
-        return response($users, 200);
-    }
-
-    public function getUser($id){
-        if (User::where('id', $id)->exists()) {
-            $user = User::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($user, 200);
-          } else {
-            return response()->json([
-              "message" => "Gebruiker nie gevonde he nutjob die je bent!@#$%"
->>>>>>> development_Max
             ], 404);
           }
     }
 
-<<<<<<< HEAD
     public function getUserRFID($rfid){
       if (User::where('rfid', $rfid)->exists()) {
           $user = User::where('rfid', $rfid)->get()->toJson(JSON_PRETTY_PRINT);
@@ -100,9 +79,9 @@ class ApiController extends Controller
       return response()->json([
           "message" => "Product record toegevoegd"
       ], 201);
+    }
 
       
-=======
     public function getAllGroceryProducts() {
         $groceries = Grocery::all()->toJson(JSON_PRETTY_PRINT);
         return response($groceries, 200);
@@ -135,17 +114,5 @@ class ApiController extends Controller
             "message" => "storage record created"
         ], 201);
 
-    }
-
-    public function getUserRFID($rfid){
-        if (User::where('rfid', $rfid)->exists()) {
-            $user = User::where('rfid', $rfid)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($user, 200);
-          } else {
-            return response()->json([
-              "message" => "Gebruiker niet gevonden"
-            ], 404);
-          }
->>>>>>> development_Max
     }
 }

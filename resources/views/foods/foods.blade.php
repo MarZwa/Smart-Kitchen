@@ -1,7 +1,7 @@
 @extends('default')
 
 @section('css')
-    <script src="/css/foods_cutlery.css"></script>
+    <link rel="stylesheet" href="/css/foods_cutlery.css">
 @endsection
 
 @section('title')
