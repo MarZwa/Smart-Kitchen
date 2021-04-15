@@ -10,6 +10,8 @@ class Task extends Model
     protected $table = 'tasks';
     use HasFactory;
 
-    
+    public function cleaninglog(){
+        return $this->belongsTo("cleaning_log", "name", "task_name");
+    }
     
 }

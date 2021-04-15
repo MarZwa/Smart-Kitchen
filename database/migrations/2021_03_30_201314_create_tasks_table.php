@@ -18,8 +18,10 @@ class CreateTasksTable extends Migration
             $table->string('name')->unique();
             $table->string('image')->default("/icon/vacuum.png");
             $table->integer('interval')->default(3); // Hoeveel dagen moeten er tussen twee voltooide taken zitten?
+            $table->integer('reminder')->default(3);
             $table->string('sensor')->nullable(); //De sensor label die door de Arduino serieel met de Pi gecommniceerd wordt.
             $table->string('sensor_state'); 
+            
         });
     }
 

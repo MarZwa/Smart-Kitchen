@@ -16,12 +16,12 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Bas',
-            'rfid' => '0xF9 0x25 0x88 0x9C',
+            'rfid' => 'F925889C',
         ]);
 
         DB::table('users')->insert([
             'name' => 'Jamal',
-            'rfid' => '0x9C 0x5F 0x47 0x18',
+            'rfid' => '9C5F4718',
         ]);
 
         DB::table('users')->insert([

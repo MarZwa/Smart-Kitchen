@@ -12,16 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('cleaning/{id}', function ($id) {
-    return view('user');
-});
-
-Route::get('/cleaning', function () {
-    return view('cleaning', );
-});
+// General
 
 
+// Cleaning Subsystem
+Route::get('/cleaning', [App\Http\Controllers\CleaningLogController::class, 'index']);
+
+// Cleaning Subsystem -> User page
+// Route::post('cleaning/users/{id}', );
