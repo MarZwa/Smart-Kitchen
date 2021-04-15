@@ -18,19 +18,19 @@ while True:
     mycursor.execute("SELECT * FROM status_bak")
     for x in mycursor:
         if x[1] == 'Rest':
-            port.write("l1")
+            port_2.write("l1")
             time.sleep(5)
             mycursor.execute("UPDATE status_bak SET status = Null")
         elif x[1] == 'Plastic':
-            port.write("l0")
+            port_2.write("l2")
             time.sleep(5)
             mycursor.execute("UPDATE status_bak SET status = Null")
         elif x[1] == 'Gft':
-            port.write("l2")
+            port_2.write("l0")
             time.sleep(5)
             mycursor.execute("UPDATE status_bak SET status = Null")
         else:
-            port.write("l3")
+            port_2.write("l3")
             time.sleep(1)
         
         rcv = port.readline().strip()
