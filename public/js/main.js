@@ -68,7 +68,7 @@ constructor() {
 
 window.customElements.define('circular-progression-bar', CircularProgressionBar);
 
-if (window.location.href.indexOf('/user/products') != -1){
+if (window.location.href.indexOf('/products') != -1){
     const select = document.getElementsByClassName('products__filter-section__select')[0];
     let product_wrapper = document.getElementsByClassName("product-wrapper")[0];
     let list_of_products = product_wrapper.getElementsByTagName('li');
