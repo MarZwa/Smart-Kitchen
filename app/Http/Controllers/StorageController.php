@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Storage;
 use DB;
+use App\Models\Shelf;
 
 class StorageController extends Controller
 {
