@@ -22,6 +22,13 @@ class GroceryController extends Controller
         }
     }
 
+    public function grocery() {
+        return view('groceries.grocerylist', [
+            'user' => Shelf::all(),
+            'groceries' => Grocery::orderBy('created_at', 'desc')->get(),
+        ]);
+    }
+
     public function destroyGrocery() {
         DB::table('grocery')->truncate();
 

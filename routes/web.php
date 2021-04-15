@@ -22,11 +22,10 @@ Route::get('/users/{id}', [ShelfController::class, 'show']);
 // Route::get('/users/{id}/storagelist', [ShelfController::class, 'storage']);
 Route::get('/rfid', [ShelfController::class, 'show']);
 
-Route::get('/grocerylist', [ShelfController::class, 'grocery']);
-Route::get('/storagelist', [ShelfController::class, 'storage']);
+Route::get('/grocerylist', [GroceryController::class, 'grocery']);
+Route::get('/storagelist', [StorageController::class, 'storage']); 
 
 
-// Route::get('/grocery/create', [GroceryController::class, 'createGrocery']);
 Route::delete('/grocery-clear', [GroceryController::class, 'destroyGrocery']);
 Route::delete('/storage-delete/{id}', [StorageController::class, 'destroyStorage']);
 

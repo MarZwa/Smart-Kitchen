@@ -21,8 +21,14 @@ class StorageController extends Controller
         }
     }
 
+    public function storage() {
+        return view('storage.storagelist', [
+            'user' => Shelf::all(),
+            'storage' => Storage::orderBy('created_at', 'desc')->get(),
+        ]);
+    }
+
     public function destroyStorage(Request $request, $id) {
-        // dd($request);
         $id = $id;
 
         DB::table('storage')->where('id', $id)->delete();
