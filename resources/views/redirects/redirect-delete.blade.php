@@ -1,5 +1,13 @@
 @extends('default')
 
+@section('css')
+    @include('components.css_calorie_tracker')
+@endsection
+
+@section('js')
+    @include('components.js_calorie_tracker')
+@endsection
+
 @section('content')
     <section class="redirect-page">
         <section class="redirect-page__body">
