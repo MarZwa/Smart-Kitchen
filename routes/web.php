@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/foods/{id}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
-Route::get('/foods/daily/{id}', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
-Route::get('/foods/weekly/{id}', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);
+Route::get('/foods/{id}/daily', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
+Route::get('/foods/{id}/weekly', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);

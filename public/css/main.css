@@ -29,7 +29,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     transition: 0.5s;
 }
 
@@ -99,6 +99,14 @@ body {
     border-radius: 0.1rem;
 }
 
+.foodCard__progress--done {
+    border: solid 2px var(--accent-green);     
+}
+
+.foodCard__progress--done::-webkit-progress-value {
+    background-color: var(--accent-green);
+}
+
 .buttonSection__button {
     background-color: var(--accent-color);
     color: white;
@@ -137,6 +145,14 @@ body {
 
 .u-header {
     font-family: 'Roboto', sans-serif;
+}
+
+.u-text-align-center {
+    text-align: center;
+}
+
+.u-margin-1rem {
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 1440px) {
