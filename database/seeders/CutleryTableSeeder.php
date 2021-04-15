@@ -56,7 +56,6 @@ class CutleryTableSeeder extends Seeder
 
         DB::table('cutlery')->insert([
             'cutlery' => 'Witte wijn glas',
-            'scanned' => true,
         ]);
 
         DB::table('cutlery')->insert([
