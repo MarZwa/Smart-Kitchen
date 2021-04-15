@@ -28,3 +28,11 @@ Route::get('/user/create', [UsersController::class, 'create']);
 Route::post('/user', [UsersController::class, 'store']);
 Route::get('/user/delete/{id}', [UsersController::class, 'confirmation']);
 Route::delete('/delete', [UsersController::class, 'destroy']);
+
+
+Route::get('/foods/{id}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
+Route::get('/foods/{id}/daily', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
+Route::get('/foods/{id}/weekly', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);
+
+Route::get('/cutlery', [\App\Http\Controllers\CutleryController::class, 'show']);
+Route::post('/cutlery/reset', [\App\Http\Controllers\CutleryController::class, 'update']);
