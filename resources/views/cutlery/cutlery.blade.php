@@ -12,7 +12,7 @@
     <article class="cutlery">
         <figure class="cutlery__figure">
             <img class="cutlery__img" src="/img/etiquette2.jpg" alt="Etiquette">
-            @include('components.cutlery--identifiers')
+            @include('cutlery.components.cutlery--identifiers')
         </figure>
         <section class="cutlery__name">
             @foreach($cutlery as $cutlery)

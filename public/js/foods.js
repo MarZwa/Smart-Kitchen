@@ -20,5 +20,5 @@ function checkDone(foodId) {
 }
 
 for(i=0; i<foods.length; i++) {
-    checkDone(foods[i])
+    checkDone(foods[i]);
 }

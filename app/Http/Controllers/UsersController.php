@@ -10,20 +10,20 @@ class UsersController extends Controller
         $foods = \App\Models\Foods::all()->first();
         $user = \App\Models\Users::find($id);
 
-        return view('foods', ['foods' => $foods, 'user' => $user]);
+        return view('foods.foods', ['foods' => $foods, 'user' => $user]);
     }
 
     protected function showDailyFoods($id) {
         $foods = \App\Models\Foods::all()->first();
         $user = \App\Models\Users::find($id);
 
-        return view('dailyFoods', ['foods' => $foods, 'user' => $user]);
+        return view('foods.dailyFoods', ['foods' => $foods, 'user' => $user]);
     }
 
     protected function showWeeklyFoods($id) {
         $foods = \App\Models\Foods::all()->first();
         $user = \App\Models\Users::find($id);
 
-        return view('weeklyFoods', ['foods' => $foods, 'user' => $user]);
+        return view('foods.weeklyFoods', ['foods' => $foods, 'user' => $user]);
     }
 }

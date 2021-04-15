@@ -129,6 +129,14 @@ body {
     background-color: var(--accent-red);
 }
 
+.foodCard__progress--done {
+    border: solid 2px var(--accent-green);     
+}
+
+.foodCard__progress--done::-webkit-progress-value {
+    background-color: var(--accent-green);
+}
+
 .cutlery {
     width: 100%;
     font-size: 1.45rem;
