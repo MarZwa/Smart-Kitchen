@@ -67,3 +67,32 @@ constructor() {
 }
 
 window.customElements.define('circular-progression-bar', CircularProgressionBar);
+
+if (window.location.href.indexOf('/products') != -1){
+    const select = document.getElementsByClassName('products__filter-section__select')[0];
+    let product_wrapper = document.getElementsByClassName("product-wrapper")[0];
+    let list_of_products = product_wrapper.getElementsByTagName('li');
+    let select_value;
+    for(let i = 0; i < list_of_products.length; i++){
+        list_of_products[i].style.display = '';
+    }
+
+    select.addEventListener('change', function(){
+        select_value = select.value;
+        if(select_value == 'All'){
+            for(let i = 0; i < list_of_products.length; i++){
+                    list_of_products[i].style.display = '';       
+                }  
+            }
+        else {
+            for(let i = 0; i < list_of_products.length; i++){
+                    if (list_of_products[i].dataset.productCategory == select_value){
+                        list_of_products[i].style.display = '';
+                    }     
+                    else {
+                        list_of_products[i].style.display = 'none'; 
+                    } 
+                }  
+            }
+    });
+}

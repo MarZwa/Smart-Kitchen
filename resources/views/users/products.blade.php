@@ -7,6 +7,13 @@
         </section>
 
         <section class="products-section">
+            <section class="products__filter-section">
+                <select class="products__filter-section__select">
+                    <option value="All">All</option>
+                    <option value="Non-Alcohol">Non-Alcohol</option>            
+                    <option value="Alcohol">Alcohol</option>  
+                </select>
+            </section> 
             <section class="product">
                 <article>
                     <p class="product-value">Type</p>
