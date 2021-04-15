@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
+Route::get('/afval', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
 
 Route::get('/status/{naam}', [\App\Http\Controllers\AfvalController::class, 'statusUpdate']);
 

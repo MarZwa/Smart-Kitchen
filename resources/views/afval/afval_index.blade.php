@@ -1,16 +1,19 @@
 @extends('default')
 
+@section('css')
+    <link rel="stylesheet" href="/css/afval.css">
+@endsection
 
-@section('script')
-    <script src="/js/main.js" defer></script>
+@section('js')
+    <script src="/js/afval.js" defer></script>
 @endsection
 
 @section('title')
     Afval sorteren
 @endsection
 
-@section('body')
-    <body onload="getDay('{{$user_een->ophaal_dag}}')">
+@section('onload')
+    onload="getDay('{{$user_een->ophaal_dag}}')"
 @endsection
 
 @section('content')

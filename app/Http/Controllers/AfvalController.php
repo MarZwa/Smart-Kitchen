@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AfvalController extends Controller
 {
     public function sorteren(){
-        return view('afval.index',[
+        return view('afval.afval_index',[
             'afval_naam' => \App\Models\Afval::all('naam'),
             'status' => \App\Models\StatusBak::all()->first(),
             'vol_rest' => \App\Models\VolheidBakken::all()->first(),
@@ -26,7 +26,7 @@ class AfvalController extends Controller
         
         $status->status = $bak[0]->bak;
         $status->save();
-        return redirect("/");
+        return redirect("/afval");
     }
 
     public function setDag($dag){
@@ -34,6 +34,6 @@ class AfvalController extends Controller
         
         $eerste_user->ophaal_dag = $dag;
         $eerste_user->save();
-        return redirect("/");
+        return redirect("/afval");
     }
 }
