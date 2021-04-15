@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\resetCaloriesAlcohol',
     ];
 
     /**
@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('reset:CalAlc')->daily();
         $schedule->call(function() {
             DB::table('users')->update([                
                 'groente' => 0,

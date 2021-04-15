@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            AfvalBakTableSeeder::class,
+            AfvalRestTableSeeder::class,
+            AfvalPlasticTableSeeder::class,
+            AfvalGftTableSeeder::class,
+            StatusBakTableSeeder::class,
+            VolheidBakkenTableSeeder::class,
             RecommendedFoodsTableSeeder::class,
             UsersTableSeeder::class,
             CutleryTableSeeder::class,
