@@ -25,6 +25,18 @@ body {
     background-color: var(--background-color);
 }
 
+.buttonSection {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: 0.5s;
+}
+
+.buttonSection:hover {
+    border-radius: 5rem;
+}
+
 .foodCard {
     grid-column: span 12;
     width: 100%;
@@ -59,6 +71,7 @@ body {
 
 .foodCard__header {
     width: 100%;
+    font-size: 2rem;
 }
 
 .foodCard__progressSection {
@@ -86,20 +99,27 @@ body {
     border-radius: 0.1rem;
 }
 
-.foodCard__progress--max {
-    border: solid 2px var(--accent-green);    
+.foodCard__progress--done {
+    border: solid 2px var(--accent-green);     
 }
 
-.foodCard__progress--max::-webkit-progress-value {
+.foodCard__progress--done::-webkit-progress-value {
     background-color: var(--accent-green);
 }
 
-.foodCard__progress--tooMuch {
-    border: solid 2px var(--accent-red);    
+.buttonSection__button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    transition: 0.5s;
+    padding: 0.75rem 1.5rem;
 }
 
-.foodCard__progress--tooMuch::-webkit-progress-value {
-    background-color: var(--accent-red);
+.button:hover {
+    border-radius: 5rem;
+    cursor: pointer;
 }
 
 /* utility classes */
@@ -127,6 +147,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.u-text-align-center {
+    text-align: center;
+}
+
+.u-margin-1rem {
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 1440px) {
     .u-desktop-width {
         width: 70%;
@@ -143,4 +171,9 @@ h1 {
     text-align: center;
     font-size: 175%;
     margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
