@@ -1,5 +1,9 @@
 @extends('default')
 
+@section('css')
+    <script src="/css/foods_cutlery.css"></script>
+@endsection
+
 @section('title')
     Voedingsmiddelen
 @endsection
