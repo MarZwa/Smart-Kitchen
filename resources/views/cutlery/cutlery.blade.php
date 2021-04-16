@@ -1,7 +1,11 @@
 @extends('default')
 
 @section('css')
-    <script src="/css/foods_cutlery.css"></script>
+    <link rel="stylesheet" href="/css/foods_cutlery.css">
+@endsection
+
+@section('js')
+    <script src="/js/main.js" defer></script>
 @endsection
 
 @section('title')
@@ -9,6 +13,9 @@
 @endsection
 
 @section('content')
+    <article>
+        @include('components.navigation')
+    </article>
     <article class="cutlery">
         <figure class="cutlery__figure">
             <img class="cutlery__img" src="/img/etiquette2.jpg" alt="Etiquette">

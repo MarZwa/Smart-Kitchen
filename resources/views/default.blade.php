@@ -10,7 +10,6 @@
         @yield('js')
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-        <script src="/js/foods.js" defer></script>
         <title>Smart Kitchen</title>
     </head>
     <body @yield('onload')>

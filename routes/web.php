@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Models\User;
-use \App\Http\Controllers\UsersController;
 use \App\Http\Controllers\GroceryController;
 use \App\Http\Controllers\StorageController;
+use \App\Http\Controllers\CutleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,12 +33,13 @@ Route::get('/user/delete/{id}', [UsersController::class, 'confirmation']);
 Route::delete('/delete', [UsersController::class, 'destroy']);
 
 
-Route::get('/foods/{id}', [\App\Http\Controllers\UsersController::class, 'showFoods']);
-Route::get('/foods/{id}/daily', [\App\Http\Controllers\UsersController::class, 'showDailyFoods']);
-Route::get('/foods/{id}/weekly', [\App\Http\Controllers\UsersController::class, 'showWeeklyFoods']);
+Route::get('/foods/{id}', [UsersController::class, 'showFoods']);
+Route::get('/foods/{id}/daily', [UsersController::class, 'showDailyFoods']);
+Route::get('/foods/{id}/weekly', [UsersController::class, 'showWeeklyFoods']);
 
-Route::get('/cutlery', [\App\Http\Controllers\CutleryController::class, 'show']);
-Route::post('/cutlery/reset', [\App\Http\Controllers\CutleryController::class, 'update']);
+Route::get('/cutlery', [CutleryController::class, 'show']);
+Route::post('/cutlery/reset', [CutleryController::class, 'update']);
+
 Route::get('/grocerylist', [GroceryController::class, 'grocery']);
 Route::get('/storagelist', [StorageController::class, 'storage']); 
 
