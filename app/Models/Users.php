@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Users extends Model
 {
     protected $table = 'users';
 
-    public function allProducts(){
-        return $this->hasMany(ProductUsage::class, 'user_name', 'name');
-    }
+    use HasFactory;
 }

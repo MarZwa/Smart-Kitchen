@@ -13,6 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            AfvalBakTableSeeder::class,
+            AfvalRestTableSeeder::class,
+            AfvalPlasticTableSeeder::class,
+            AfvalGftTableSeeder::class,
+            StatusBakTableSeeder::class,
+            VolheidBakkenTableSeeder::class,
+            RecommendedFoodsTableSeeder::class,
+            CutleryTableSeeder::class,
+            UsersTableSeeder::class,
+            GroceryTableSeeder::class,
+        ]);
     }
 }
