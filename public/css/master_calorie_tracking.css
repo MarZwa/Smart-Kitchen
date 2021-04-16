@@ -20,7 +20,7 @@ html{
 
 body{
     font-size: 1.8rem;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: sans-serif;
     background-color: var(--background-color);
     width: 100vw;
     height: 100vh;
@@ -644,6 +644,10 @@ body{
 
     .dashboard-navigation__menu__link, .navigation__menu__link{
         font-size: 2.4rem;
+    }
+
+    .dashboard-navigation__menu__link:hover, .navigation__menu__link:hover{
+        border-bottom: 0.2rem solid white;
     }
 
     .dashboard-navigation__menu__item:nth-last-child(3){

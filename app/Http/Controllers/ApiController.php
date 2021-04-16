@@ -7,6 +7,9 @@ use App\Models\User;
 use App\Models\ProductUsage;
 use DB;
 
+use App\Models\Grocery;
+use App\Models\Storage;
+
 class ApiController extends Controller
 {
     public function getUser($id){
@@ -76,7 +79,40 @@ class ApiController extends Controller
       return response()->json([
           "message" => "Product record toegevoegd"
       ], 201);
+    }
 
       
+    public function getAllGroceryProducts() {
+        $groceries = Grocery::all()->toJson(JSON_PRETTY_PRINT);
+        return response($groceries, 200);
+    }
+
+    public function getAllStorageProducts() {
+        $storage = Storage::all()->toJson(JSON_PRETTY_PRINT);
+        return response($storage, 200);
+    }
+
+    public function createGrocery(Request $request) {
+        $grocery = new Grocery;
+        $grocery->empty_product_name = $request->product_name;
+        $grocery->empty_user_name = $request->user_name;
+        $grocery->save();
+
+        return response()->json([
+            "message" => "grocery record created"
+        ], 201);
+
+    }
+
+    public function createStorage(Request $request) {
+        $storage = new Storage;
+        $storage->add_product_name = $request->product_name;
+        $storage->add_user_name = $request->user_name;
+        $storage->save();
+
+        return response()->json([
+            "message" => "storage record created"
+        ], 201);
+
     }
 }

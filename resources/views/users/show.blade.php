@@ -8,8 +8,6 @@
     @include('components.js_calorie_tracker')
 @endsection
 
-
-
 @section('content')
     <article class="profile-dashboard">
         <section class="dashboard">
