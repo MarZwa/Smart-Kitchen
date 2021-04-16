@@ -18,6 +18,8 @@ use \App\Http\Controllers\CutleryController;
 |
 */
 
+Route::get('/', [UsersController::class, 'index']);
+
 Route::get('/afval', [\App\Http\Controllers\AfvalController::class, 'sorteren']);
 Route::get('/status/{naam}', [\App\Http\Controllers\AfvalController::class, 'statusUpdate']);
 Route::get('/set/{dag}', [\App\Http\Controllers\AfvalController::class, 'setDag']);
@@ -46,5 +48,7 @@ Route::get('/storagelist', [StorageController::class, 'storage']);
 Route::delete('/grocery-clear', [GroceryController::class, 'destroyGrocery']);
 Route::delete('/storage-delete/{id}', [StorageController::class, 'destroyStorage']);
 
+Route::post('/store', [StorageController::class, 'storeStorage']);
 Route::post('/grocery', [GroceryController::class, 'storeGrocery']);
-Route::post('/storage', [StorageController::class, 'storeStorage']);
+
+
