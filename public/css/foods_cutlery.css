@@ -197,6 +197,10 @@ body {
         margin-top: 160%;
     }
 
+    .dashboard-navigation__menu__link:hover, .navigation__menu__link:hover{
+        border-bottom: 0.2rem solid white;
+    }
+
     .navigation-icon{
         display: none;
     }
