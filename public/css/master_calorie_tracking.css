@@ -274,20 +274,27 @@ body{
     font-size: 1.8rem;
     color: var(--white-background-color);
     border: var(--profile-color);
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
+    transition: 0.3s all;
+}
+
+.button:hover{
+    border-radius: 10rem;
+    background-color: #89C6FF;
+    cursor: pointer;
+    color: #000000;
 }
 
 .secondary{
     color: black;
     border: 0.2rem solid var(--profile-color);
     background-color:  var(--white-background-color);
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
+    transition: 0.3s all;
 }
 
-.button:hover{
-    cursor: pointer;
-    transform: scale(0.96);
-    border-radius: 1rem;
+.secondary:hover{
+    background-color:  var(--white-background-color);
 }
 
 .replacement{

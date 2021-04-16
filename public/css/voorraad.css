@@ -194,6 +194,7 @@ body{
     font-size: 2rem;
     cursor: pointer;
     border-radius: 0.6rem;
+    transition: 0.3s all;
 }
 
 .create-form__delButton, .grocery__delButton {
@@ -205,11 +206,27 @@ body{
     font-size: 1.6rem;
     cursor: pointer;
     border-radius: 0.6rem;
+    transition: 0.3s all;
 }
 
 .create-form__delButton {
     margin: 0 !important;
 }
+
+.create-form__delButton:hover, .create-form__button:hover, .grocery__delButton:hover{
+    border-radius: 10rem;
+    cursor: pointer;
+    color: #000000;
+}
+
+.create-form__delButton:hover, .grocery__delButton:hover{
+    background-color: #ee6969;
+}
+
+.create-form__button:hover{
+    background-color: #89C6FF;
+}
+
 
 .storage-info-user, .storage-info-product {
     padding-top: 0.5rem;
