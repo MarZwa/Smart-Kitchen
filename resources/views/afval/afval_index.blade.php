@@ -17,6 +17,8 @@
 @endsection
 
 @section('content')
+    @include('components.navigation')
+
     <article class="datumVeld" id="js--datumVeld">
         @if($user_een->ophaal_dag == Null)
             <h1 class="datumVeld__h1" id="js--datumVeld__h1">Op welke dag wordt het vuilnis opgehaald?</h1>
