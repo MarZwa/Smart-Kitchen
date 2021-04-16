@@ -16,9 +16,10 @@ mycursor = mydb.cursor()
 
 while True:
     rfid = port.readline()
-    updateQuery = "UPDATE cutlery SET scanned = true WHERE rfid = '" + rfid + "';"
-    print(updateQuery)
-    # mycursor.execute(updateQuery)
+    if(rfid):
+        updateQuery = "UPDATE cutlery SET scanned = true WHERE rfid = '" + rfid + "';"
+        print(updateQuery)
+        mycursor.execute(updateQuery)
 
     time.sleep(1)
     mydb.commit()
